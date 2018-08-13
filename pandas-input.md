@@ -66,6 +66,7 @@ This constructs a DataFrame from a dictionary.  In the dictionary, each "key" is
 
 So what does the `read_csv` function give us?  What's in `df`?  We can check its contents by adding the statement `print('\n', df)`.  (The `'\n'` tells the print function to start printing on a new line, which makes the output look better.)  The result is
 
+
 ```
       name  x1  x2   x3
 0     Dave   1   2  3.5
@@ -97,7 +98,7 @@ The argument `nrows=2` tells the `read_csv` statement to read only the first 2 r
 2  Spencer   5   6  7.8
 ```
 
-We see that the number 1 that was formerly at the top of the `x1` column has been replaced by `NaN` -- "not a number". This particular example is somewhat silly, as we probably do not want to pretend that the number 1 is actually missing data. However, as we will see throughout the course, real data is messy and often has missing values. We've come across all these markers (and more) for noting that some data is missing: `-`, `null`, `n/a`, `NA`, `N/A`, `nan`, `NaN`, ... Being able to tell pandas which values to treat as missing will allow us to read in some otherwise troublesome data.
+We see that the number 1 that was formerly at the top of the `x1` column has been replaced by `NaN` -- "not a number". This particular example is somewhat silly, as we probably do not want to pretend that the number 1 is actually missing data. However, as we will see throughout the course, real data is messy and often has missing values. We've come across all these markers (and more) for noting that some data is missing: `-`, `null`, `n/a`, `NA`, `N/A`, `nan`, `NaN`, ... Being able to tell `pandas` which values to treat as missing will allow us to read in some otherwise troublesome data.
 
 **Reading Excel files.** We can also read Excel files (xls and xlsx) with Pandas using the `read_excel()` function.  The syntax is almost identical:
 
@@ -260,20 +261,20 @@ Here are some spreadsheet datasets we find interesting.  In each one, we describ
 
 At this point you should **download the code file** for this chapter, linked on the first page (the top of this page if you are viewing online).  Save it in your `Data_Bootcamp` directory and open it in Spyder.  That will save you a lot of typing.
 
-**Penn World Table.**  The [PWT](http://www.rug.nl/research/ggdc/data/pwt/?lang=en), as we call it, is a standard database for comparing the incomes of countries.  It includes annual data for GDP, GDP per person, employment, hours worked, capital, and many other things.  The variables are measured on a comparable basis, with GDP measured in  2005 US dollars.
+**Penn World Table.**  The [PWT](https://www.rug.nl/ggdc/productivity/pwt/), as we call it, is a standard database for comparing the incomes of countries.  It includes annual data for GDP, GDP per person, employment, hours worked, capital, and many other things.  The variables are measured on a comparable basis, with GDP measured in  2005 US dollars.
 
-The data is in an [Excel spreadsheet](http://www.rug.nl/research/ggdc/data/pwt/v81/pwt81.xlsx).  If we open it, we see that it has three sheets.  The third one is the data and is named `Data`.  We read it in with the code:
+The data is in an [Excel spreadsheet](https://www.rug.nl/ggdc/docs/pwt90.xlsx).  If we open it, we see that it has three sheets.  The third one is the data and is named `Data`.  We read it in with the code:
 
 ```python
-url = 'http://www.rug.nl/research/ggdc/data/pwt/v81/pwt81.xlsx'
+url = 'https://www.rug.nl/ggdc/docs/pwt90.xlsx'
 pwt = pd.read_excel(url, sheetname='Data')
 ```
 
 So what does that give us?
 
-* `pwt.shape` returns `(10357, 47)`:  the DataFrame `pwt` contains 10,357 observations of 47 variables.
+* `pwt.shape` returns `(11830, 47)`:  the DataFrame `pwt` contains 10,357 observations of 47 variables.
 * `list(pwt)` gives us the variable names, which include `countrycode`, `country`, `year`, `rgdpo` (real GDP), and `pop` (population).
-* `pwt.head()` shows us the first 5 observations, which refer to Angola for the years 1950 to 1954.  If we look further down, we see that countries are stacked on top of each other in alphabetical order.
+* `pwt.head()` shows us the first 5 observations, which refer to Aruba for the years 1950 to 1954.  If we look further down, we see that countries are stacked on top of each other in alphabetical order.
 
 In this dataset, each column is a variable and each row is an observation.  But if we were to plot one of the variables, it wouldn't make much sense.  The observations string together countries, one after the other.  What we'd like to do is compare countries, which this isn't set up to do -- yet.
 
@@ -288,11 +289,12 @@ This one gives us some idea of the challenges we face dealing with what looks li
 
 ```python
 url1 = 'https://www.imf.org/external/pubs/ft/weo/'
-url2 = '2015/02/weodata/WEOOct2015all.xls'
+url2 = '2018/01/weodata/WEOApr2018all.xls'
 weo = pd.read_csv(url1+url2,
                   sep='\t',                 # \t = tab
                   thousands=',',            # kill commas
-                  na_values=['n/a', '--'])  # missing values
+                  na_values=['n/a', '--'],  # missing values
+                  encoding='iso-8859-1')    # change encoding
 ```
 
 This has several features we need to deal with:
@@ -301,6 +303,7 @@ This has several features we need to deal with:
 * Identify tabs as the separator between entries with the argument `sep='\t'`.
 * Use the `thousands` argument to eliminate commas from numbers -- things like `12,345.6`, which Python will treat as strings.  (What were they thinking of?)
 * Identify missing values with the `na_values` argument.
+* Correctly specifying character encoding types with the `encoding` argument.
 
 Keep in mind that it took us an hour or two to figure all this out.  You can get a sense of where we started by running the `read_csv` statement without the last two arguments and listing its dtypes.  You'll notice that variables you might expect to be floats are objects instead.
 
@@ -354,9 +357,9 @@ The plot we produce in the last line is virtually impossible to read, but we'll 
 This code reads in estimates of population by age for many countries:
 
 ```python
-url1 = 'http://esa.un.org/unpd/wpp/DVD/Files/'
+url1 = 'https://esa.un.org/unpd/wpp/DVD/Files/'
 url2 = '1_Indicators%20(Standard)/EXCEL_FILES/1_Population/'
-url3 = 'WPP2015_POP_F07_1_POPULATION_BY_AGE_BOTH_SEXES.XLS'
+url3 = 'WPP2017_POP_F07_1_POPULATION_BY_AGE_BOTH_SEXES.xlsx'
 url = url1 + url2 + url3
 
 cols = [2, 4, 5] + list(range(6,28))
@@ -365,7 +368,10 @@ est = pd.read_excel(url, sheetname=0, skiprows=16, parse_cols=cols)
 
 The columns contain population numbers for 5-year age groups.  When we're up to it, we'll use this data to illustrate the dramatic aging of the population in many countries.  It's one of the striking facts of modern times:  people are living longer, a lot longer.
 
-**Exercise.** What does `list(range(6,28))` do?  Why?
+**Exercise.** What does `list(range(6,28))` do?  Why?  
+
+Tinghao Comment: Why this exercise? It comes out like nowhere.
+
 
 **Incomes by college major.** Nate Silver's [538 blog](http://fivethirtyeight.com/) does a lot of good data journalism and often posts its data online.  This one comes from their analysis of [income by college major](http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/).  The data comes from the American Community Survey but they've done the work of organizing it for us.
 
