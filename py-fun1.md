@@ -827,7 +827,7 @@ str(len(3.1416))
     * Invalid syntax. Syntax errors can be detected before your program begins to run. So first thing to do is to check typos, parentheses, etc.
     * KeyError. It happens when you refer a key not previously defined in the dictionary. 
 
-### Useful Tricks and Programming Tools
+**Useful Tricks and Programming Tools**
 
 * **Comments.** Use the hash symbol # to add comments to your code and explain what you’re doing. Don't underestimate the importance of creating well commented code. Here are some thoughts on this...
     - https://blogs.msdn.microsoft.com/oldnewthing/20070406-00/?p=27343
