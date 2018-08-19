@@ -519,6 +519,51 @@ Tuples are ordered collections of things in parentheses separated by commas.  Th
 **Example.**  This is a tuple: `t = (1, 5, -3)`.
 
 
+**Dictionaries** are (unordered) pairs of things defined by curly brackets `{}`, separated by commas, with the items in each pair separated by colon.  For example, a list of first and last names:
+
+```python
+names = {'Dave': 'Backus', 'Chase': 'Coleman', 'Spencer': 'Lyon', 'Glenn': 'Okun'}
+```
+
+If we try `type(names)`, the reply is `dict`, meaning dictionary.  The components of each pair are referred to as the **key** (the first part) and the **value** (the second).  In a real dictionary, the word is the key and the definition is the value.  The keys must be unique, but the values need not be.
+
+We access the value from the key with syntax of the form: `dict[key]`.  In the example above, we get Glenn's last name by typing `names['Glenn']`.  (Try it and see.)
+
+We teach ourselves the rest:
+
+**Exercise.** Print `names`.  Does it come out in the same order we typed it?
+
+**Exercise.** Construct a dictionary whose keys are the integers 1, 2, and 3 and whose values are the same numbers as words:  one, two, three.  How would you get the word associated with the key `2`?
+
+**Exercise.** Enter the code
+
+```python
+d = {'Donald': 'Duck', 'Mickey': 'Mouse', 'Donald': 'Trump'}
+print(d)
+```
+
+What do you see?  Why do you think this happened?
+
+**Exercise.** Describe -- and explain if possible -- the output of these statements:
+
+* `list(names)`?
+* `names.keys()`?
+* `list(names.keys())`?
+* `names.values()`?
+
+**Exercise.** Consider the dictionary
+
+```python
+data = {'Year': [1990, 2000, 2010], 'GDP':  [8.95, 12.56, 14.78]}
+```
+
+What are the keys here?  The values?  What do you think this dictionary represents?
+
+<!--
+**Exercise.** What happens if we try to slice a dictionary the way we slice lists and strings?  For example, try `x = states[0]`.  What happens?  Why?
+-->
+
+
 ## Python's built-in functions
 
 We now have several kinds of **objects** to work with:  numbers, strings, and lists.  There are more on the way, but that's a good start.  And yes, the formal term is really **objects**.  But what can we do with them?  Python has two basic ways to express things we do with objects:  **functions** and **methods**.  We'll talk about functions in this section and methods in the next one.
@@ -636,81 +681,7 @@ print(y)
 **Exercise (challenging).**  This one is tricky, but it came up in some work we were doing.  Suppose `year` is a string containing the year of a particular piece of data; for example, `year = '2015'`.  How would we construct a string for the following year?  *Hint:*  Start by converting year to an integer.
 
 
-## Objects and methods
 
-As we noted, lots of things in Python are **objects**.  **Methods** are ready-to-go things we can do with these objects.  The available methods depend on the object.  A lot of Python is "object-oriented," which means we apply methods to objects to accomplish what you might think you need a function for.  Trust us, the jargon is harder than just doing it.
-
-<!--
-	(Experts might say at this point:  an object is an "instance" of a "class."  Ignore them.)
--->
-
-Functions and methods differ primarily in their syntax:
-
-* Syntax of a **function**: `function(object)`
-* Syntax of a **method**: `object.method`
-
-We used the former in the previous section and consider the latter here.
-
-What methods are available to work with a given object?  Take, for example, the list `numberlist = [1, 5, -3]`.  To get the list of available methods, type in a code cell:
-
-```python
-numberlist.[tab]    # here you hit the tab key, don't type in the word "tab"
-
-```
-
-This wonderful piece of technology is referred to as **tab completion**.  The ingredients here are the object (here `numberlist`), the period or dot, and the tab key.  When you hit tab, a window will pop up with a list of methods in alphabetical order.  In our example, the list starts like this:
-
-```python
-numberlist.append
-numberlist.clear
-numberlist.copy
-numberlist.count
-```
-
-If we want more information about a method, we can type `object.method?` in a code cell.  For the method `numberlist.append`, we get the description
-
-```python
-Definition:  append(object)
-Type:  Function of None module
-L.append(object) -> None -- append object to end.
-```
-
-Well, that's pretty opaque, maybe we oversold this approach.  What `append` does is add an item to the end of a list.  Try using `append()`, then use `print()` to see the results:
-
-```python
-numberlist.append(7)
-print(numberlist)
-```
-
-That's another way to get information about a method: try it and see what happens.
-
-
-**Digression.**  We're trying to keep this simple, but we also want it to be accurate, so let us be more careful with the term **method**.  Needless to say, this is **mtwn**.  Tab completion gives us a list of two things:  *attributes* (properties of the object) and *methods* (essentially functions with different syntax).  The distinction isn't important to us, although we can tell a method because it comes with parentheses `()` (just like functions).
-
-
-**Example.** Set `firstname = 'Chase'`.  The method `lower` converts it to lower case.  If we type `firstname.lower` into the object inspector, we see that it comes with parentheses for additional inputs.  So we type `firstname.lower()` into a code cell.  The response is `'chase'`.  The parentheses are there to provide additional inputs -- arguments, we call them.  Without the parentheses, it doesn't work.
-
-
-**Exercise.** Find a method to convert `firstname` to all upper case letters.
-
-**Exercise.** This one also came up in our work.  Suppose we have a variable `z = '12,345.6'`.  What is its type?  Convert it to a floating point number without the comma.  Hint:  Use tab completion to find a method to get rid of the comma.
-
-<!-- z = z.replace(',', '') -->
-
-**Exercise.**  Run the code
-
-```python
-firstname = 'John'
-lastname  = 'Lennon'
-firstlast = firstname + ' ' + lastname
-```
-
-Find a method to replace the n's in `firstlast` with asterisks.
-
-
-## Python 2 and 3
-
-There's a lot of code around written in earlier versions of Python, most commonly Python 2.7.  It's there because the people who wrote it started before Python 3 was up and running.  Since we're starting from scratch, we are planting ourselves firmly in Python 3 territory.  Still, you're likely to run across examples of Python 2 on the internet. The easiest way to tell the difference is the print command:  `print(x)` in Python 3 was `print x` (no parentheses) in Python 2.  There are some other differences (more technical than we care to discuss), which is why it's essential we all use Python 3.
 
 
 ## Review
