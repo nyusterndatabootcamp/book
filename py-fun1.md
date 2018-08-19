@@ -707,20 +707,63 @@ print(NotDefined)
 
 log(3)
 ```
-So you see in both of these instances that there is an arrow pointing to the line within each code cell. In the first instance it is pointing to line 2. This is where the issue is. In the second instance, it is pointing to line number 3. 
+Run the code and then you see in both of these instances that there is an arrow pointing to the line within each code cell. In the first instance it is pointing to line 2. This is where the issue is. In the second instance, it is pointing to line number 3. 
 
-And after pointing to the issue, below that is says ``NameError:`` and stuff. In the first instance, it tells us `NotDefined` is well...not defined. In the second instance, its saying the same thing. It just does not know what log is.  
+And after pointing to the issue, below that is says ``NameError:`` and stuff. In the first instance, it tells us `NotDefined` is not defined. In the second instance, its saying the same thing. It just does not know what "log" is. 
+
+**Type Error.** This one happens all the time too. It happens when an inappropriate operation or function is applied to that specific data type. Here are some examples:
+```python
+x = "2"
+y = 2
+
+z = x + y
+```
+Like above, it tells us that line number 4 is the issue, i.e. where we are tying to add "2" and 2. And the issue is a type issue, we can't add two different types (in this case a string and an integer).
+
+Here is another example relating to tuples. Recall that with a tuple, the data type is immutable. That is it can't be changed. But let's try and change it.
+
+```python
+tuple_error=(2,3)
+tuple_error[0]=5
+```
+There is a ``TypeError`` problem. And what is the specific issue, well the tuple object does not support this kind of operation.
+
+**Important** A lot of the problams in interperting the error message lies in deciphering the cryptic messages like "'tuple' object does not support item assignment" So how do we do this.**Use google.** Often the first result will be a question posted to [www.stackoverflow.com](www.stackoverflow.com) which is a place for programers to ask and answer questions. This is a good place to be comfortable with and seek help from. 
+
+**Excercise:** In the google search area type "tuple' object does not support item assignment" What did you find? 
 
 
+**Invalid Syntax.**
+Syntax errors can be detected before your program begins to run. These types of errors are usually typing mistakes (fat fingers), but migth be hard to find out at first. Here we give two examples:
 
+```python
+# Define a simple list and let's call the first one in the list
+randomlist =[1,8,3,7]
+randomlist[0]]
 
+# Or when we define a string
+bad_string = 'code"
+```
+**Key Error.**
+Python raises a *KeyError* whenever a `dict()` object is requested (using the format `a = adict[key]`) and the key is not in the dictionary.
 
-## Review
+```python
+names = {'Dave': 'Backus', 'Chase': 'Coleman', 'Spencer': 'Lyon', 'Glenn': 'Okun'}
+names['David']
+```
+**"No Idea" Errors.**
+
+These are errors that you have no idea what is going on. A couple of tips:
+- **Ask a friend.** While the movie vision of a coder is some guy in a hoody in a dark room by himself, this is not how we work. Working together, as a team, is an important aspect of data analysis and coding in general. So if you have a problem, ask for help. Explain to him/her what you were trying to do (often just this process helps solve the issue) and then show them the output.
+
+- **Google fu** Use google. Chances are you are not the first one to have this problem. Just cut and past the error message into google and track down what other people have to say about it.
+
+## Review Questions
 
 Work with your neighbor on these review exercises:
 
 **Exercise.** Take turns with your neighbor explaining these terms:
-integer, float, string, list, tuple, function, method, tab completion.
+integer, float, string, list, tuple, function, tab completion.
 
 **Exercise.** What types are these expressions?  What lengths?
 
@@ -750,9 +793,9 @@ str(len('3.1416'))
 str(len(3.1416))
 ```
 
-**Exercise.** Set `name = 'Jones'`.  Use (a) tab completion to find a method that coverts `name` to upper case (capital) letters and (b) the Object inspector to find out how to use that method.  *Bonus:* How else can you get help in Spyder for methods and functions?
+**Exercise.** Set `name = 'Jones'`.  Use (a) tab completion to find a method that coverts `name` to upper case (capital) letters and (b) the Object inspector to find out how to use that method. 
 
-**Exercise (challenging).** Use tab completion and the Object inspector to find and apply a method to the string `name` that counts the number of appearances of the letter s.  Use `name = 'Ulysses'` as a test case.
+**Exercise (challenging).** Use tab completion to find and apply a method to the string `name` that counts the number of appearances of the letter s.  Use `name = 'Ulysses'` as a test case.
 
 **Exercise (challenging).** Describe the result of `list(zip('1234','abcd'))`.
 
