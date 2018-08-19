@@ -135,7 +135,7 @@ Most of the programs in this course have the structure:
 
 Each of these bullet points is typically associated with a number of lines of code, possibly a large number, but that's the general idea.
 
----
+
 ## Calculations
 
 We'll do lots of numerical calculations.  That's mostly what managing data is about: adding things up, dividing one thing by another, and so on.
@@ -300,7 +300,7 @@ The same approaches work for other functions.  We use them both a lot.  If they 
 
 ## Strings
 
-We often work with non-numerical data, collections of characters that might include letters, numbers, or other symbols.  Such things show up in a lot in data work, as variable names (GDP, income, volatility) and even as data (country or customer names, for example).  We refer these as **strings**.  This doesn't mean what we think it means.  No, not the stuff we tie up packages with, but a "string" of characters like letters or numbers.  It's one of many mysterious uses of ordinary words we'll run across as we learn to code.  For more on this one, see [here](http://stackoverflow.com/questions/880195/the-history-behind-the-definition-of-a-string).
+We often work with non-numerical data, collections of characters that might include letters, numbers, or other symbols.  Such things show up in a lot in data work, as variable names (GDP, income, volatility) and even as data (country or customer names, for example).  We refer these as **strings**.  This doesn't mean what we think it means.  No, not the stuff we tie up packages with, but a "string" of characters are like letters or numbers.  It's one of many mysterious uses of ordinary words we'll run across as we learn to code.  For more on this one, see [here](http://stackoverflow.com/questions/880195/the-history-behind-the-definition-of-a-string).
 
 We create strings by putting characters between quotation marks: 'Chase', "Spencer", 'Sarah', "apple", and even "12" are all strings.  Single and double quotes both work.
 
@@ -575,9 +575,8 @@ What are the keys here?  The values?  What do you think this dictionary represen
 
 ## Python's built-in functions
 
-We now have several kinds of **objects** to work with:  numbers, strings, and lists.  There are more on the way, but that's a good start.  And yes, the formal term is really **objects**.  But what can we do with them?  Python has two basic ways to express things we do with objects:  **functions** and **methods**.  We'll talk about functions in this section and methods in the next one.
 
-Python has a lot of basic "built-in" functions.  We've already seen the `print()` function.  Here are some others we've found useful.
+Python has a lot of basic "built-in" functions.  We've already seen the `print()` and `whos` function.  Here are some others we've found useful.
 
 **The `len()` (length) function.**  This tells us the length of an object.  We can work this one out for ourselves:
 
@@ -683,11 +682,34 @@ print(y)
 
 **Exercise.** What happens if we apply the function `float` to the string `'some'`?
 
-**Exercise.**  How would you convert the integer `i = 1234` to the list `l = ['1', '2', '3', '4']`?
+**Exercise.** How would you convert the integer `i = 1234` to the list `l = ['1', '2', '3', '4']`?
 
 **Exercise.** What is the result of `list(str(int(float('12.34'))))`?  Why?  *Hint:* Start in the middle (the string `'12.34'`) and work your way out, one step at a time.
 
 **Exercise (challenging).**  This one is tricky, but it came up in some work we were doing.  Suppose `year` is a string containing the year of a particular piece of data; for example, `year = '2015'`.  How would we construct a string for the following year?  *Hint:*  Start by converting year to an integer.
+
+
+## Programming Errors 
+
+Fact of life: **you will make errors.** Manny errors. The key to programming is (i) not getting discouraged and living with that fact and (ii) learning how to make sense of error messages and **self-correct** those errors. 
+
+Point (i) is a life skill that takes years to learn. However, we can help you with (ii), below we talk through some very common error messages and how to identify them. 
+
+**Name Error.**
+It happens when we use something not defined, it could be a variable or a function. The associated output is an error message that includes (i) what line the issue is occuring in and (ii) the name that could not be found. Here are two examples:
+
+```python
+# Using not defined variable
+print(NotDefined)
+
+# Or another situation, here we are 
+# using function that is not defined.
+
+log(3)
+```
+So you see in both of these instances that there is an arrow pointing to the line within each code cell. In the first instance it is pointing to line 2. This is where the issue is. In the second instance, it is pointing to line number 3. 
+
+And after pointing to the issue, below that is says ``NameError:`` and stuff. In the first instance, it tells us `NotDefined` is well...not defined. In the second instance, its saying the same thing. It just does not know what log is.  
 
 
 
@@ -733,6 +755,44 @@ str(len(3.1416))
 **Exercise (challenging).** Use tab completion and the Object inspector to find and apply a method to the string `name` that counts the number of appearances of the letter s.  Use `name = 'Ulysses'` as a test case.
 
 **Exercise (challenging).** Describe the result of `list(zip('1234','abcd'))`.
+
+
+## Summary
+
+**Congratulations!** First, it's amazing that you have made it this far. Reflect on what you knew before working through this notebook. Now reflect on what you can do...AMAZING!!! Let us summarize some key things that we covered.
+
+
+* **Assignments and variables**: We say we assign what's on the right to the thing on the left: x = 17.4 assigns the number 17.4 to the variable x.
+* **Data types and structures**:
+    * Strings. Strings are collections of characters in quotes: 'this is a string'.
+    * Lists. Lists are collections of things in square brackets: [1, 'help', 3.14159].
+    * Number types: integers vs. floats. Examples of integers include -1, 2, 5, 42. They cannot involve fractions. Floats use decimal points: 12.34. Thus 2 is an integer and 2.0 is a float.
+    
+* **Built-in functions**: 
+    * The `print()` function. Use `print('something', x)` to display the `value(s)` of the `object(s)` in parentheses.
+    * The `type()` function. The command `type(x)` tells us what kind of object x is. Past examples include integers, floating point numbers, strings, and lists.
+    
+* **Type conversions**: 
+    * Use `str()` to convert a float or integer to a string. 
+    * Use `float()` or `int()` to convert a string into a float or integer. 
+    * Use `list()` to convert a string to a list of its characters.
+
+* **Error message types**:
+    * NameError. Usually happens when using something not defined which could be variable or methods.
+    * TypeError. Raise when an operation or function is applied to an object of inappropriate type. For example, tuples have no `"="` methods while number no `len`.   
+    * Invalid syntax. Syntax errors can be detected before your program begins to run. So first thing to do is to check typos, parentheses, etc.
+    * KeyError. It happens when you refer a key not previously defined in the dictionary. 
+
+### Useful Tricks and Programming Tools
+
+* **Comments.** Use the hash symbol # to add comments to your code and explain what you’re doing. Don't underestimate the importance of creating well commented code. Here are some thoughts on this...
+    - https://blogs.msdn.microsoft.com/oldnewthing/20070406-00/?p=27343
+    - https://blog.codinghorror.com/when-understanding-means-rewriting/
+
+
+* **Help.** We can get help for a function or method foo by typing `foo?` in the IPython console or foo in the Object explorer. Try each of them with the `type()` function to remind yourself how this works.
+
+* **Error Messages** Look at the message, (i) read where the issue is and (ii) track down what the message is associated with that line. Or ask a friend!
 
 
 ## Resources
