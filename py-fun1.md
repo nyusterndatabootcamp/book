@@ -796,11 +796,8 @@ str(len('3.1416'))
 str(len(3.1416))
 ```
 
-**Exercise.** Set `name = 'Jones'`.  Use (a) tab completion to find a method that coverts `name` to upper case (capital) letters and (b) the Object inspector to find out how to use that method. 
+**Exercise.** Take the object `numbers = {1: 'one', 2: 'two'}`.  What type is it?  Extract the keys as a list.  Extract the values as a list.
 
-**Exercise (challenging).** Use tab completion to find and apply a method to the string `name` that counts the number of appearances of the letter s.  Use `name = 'Ulysses'` as a test case.
-
-**Exercise (challenging).** Describe the result of `list(zip('1234','abcd'))`.
 
 ## Summary
 
