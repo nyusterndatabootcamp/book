@@ -3,7 +3,7 @@
 ---
 **Overview.**  Time to start programming!  We work our way through some of the essentials of Python's core language.  We will do this within a Jupyter Notebook and along the way become familiar Markdown other properties of the notebook environment.  Part 1 of 2.
 
-**Python tools.**  Syntax, Jupyter, calculations, assignments, strings, lists, built-in functions, objects, methods, tab completion, object inspector.
+**Pythons.**  Syntax, Jupyter, calculations, assignments, strings, lists, dictionaries, built-in functions, tab completion, object inspector, bug identification and fix. 
 
 **Buzzwords.** Isn't that enough?
 
@@ -13,7 +13,7 @@
 
 We're now ready to explore the rudiments of Python.  We're going to **jump right in** to the deep end of the pool.  For a couple weeks, you may feel like you've been dropped in a foreign country where you don't speak the language.  You'll hear terms like "strings", "floats", "objects", "methods", and "tab completion".  Some of these are words you know, but even so, they tend not to mean what you think they mean.  (Insert [Princess Bride](http://www.imdb.com/title/tt0093779/quotes?item=qt0482717) joke.)
 
-Don't panic, it's just jargon.  If you put some effort into this over the next 2-4 weeks, you'll be fine.  And ask questions.  Really. **Ask lots of questions.**
+Don't be panic, it's just jargon.  If you put some effort into this over the next 2-4 weeks, you'll be fine.  And ask questions.  Really. **Ask lots of questions.**
 
 The challenge and beauty of writing computer programs is that we need to be precise.  If we mistype anything, the program won't work.  Or it might seem to work, but the output won't be what we expect.  In formal terms, the **syntax** -- the set of rules governing the language -- is less flexible than natural language (English, for example).
 
@@ -36,6 +36,15 @@ In your browser, you should have an empty notebook with the word Jupyter at the 
 ![Jupyter environment](figs/jupyter_notebook.png "Jupyter")
 
 If you have a few minutes, click on Help in the menubar and choose User Interface Tour.
+
+**Downloading a Jupyter Notebook from Github**
+* First go to the notebook github page and then click on *Raw*.
+
+* Then, press command+s (ctrl+s if you are using windows) to save it as .ipynb.
+
+* Go to location where you saved .ipynb file.
+
+* Open file, you will see the code.
 
 Let's put some of these tools to work:
 
@@ -103,7 +112,7 @@ In addition to the buttons near the top of your notebook, there are also **keybo
 
 We can find more information about Markdown under Help.  Or use your Google fu.  We like the [Daring Fireball](https://daringfireball.net/projects/markdown/) description.
 
-Markdown is ubiquitous.  This book, for example, is written in Markdown.  Look [here](https://github.com/NYUDataBootcamp/Book) for a list of chapter files.  Click on one to see how it displays.  Click on the Raw button at the top to see the Markdown file that produced it.
+Markdown is ubiquitous.  This book, for example, is written in Markdown.  Look [here](https://nyudatabootcamp.gitbook.io/thebook/) for a list of chapter files.  Click on one to see how it displays.  Click on the Raw button at the top to see the Markdown file that produced it.
 
 **Exercise.**  Ask questions if you find any of these steps mysterious:
 * Close Jupyter.
@@ -126,7 +135,7 @@ Most of the programs in this course have the structure:
 
 Each of these bullet points is typically associated with a number of lines of code, possibly a large number, but that's the general idea.
 
-
+---
 ## Calculations
 
 We'll do lots of numerical calculations.  That's mostly what managing data is about: adding things up, dividing one thing by another, and so on.
