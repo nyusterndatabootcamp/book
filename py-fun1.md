@@ -7,6 +7,9 @@
 
 **Buzzwords.** Isn't that enough?
 
+**Code.**  [Link](https://github.com/nyusterndatabootcamp/notebooks/blob/master/book_notebooks/python_fundamentals_one.ipynb).
+
+
 **Trigger warning.**  Technical content, cannot be mastered without effort.
 
 ---
@@ -799,17 +802,15 @@ str(len(3.1416))
 
 **Exercise (challenging).** Describe the result of `list(zip('1234','abcd'))`.
 
-
 ## Summary
-
-**Congratulations!** First, it's amazing that you have made it this far. Reflect on what you knew before working through this notebook. Now reflect on what you can do...AMAZING!!! Let us summarize some key things that we covered.
-
 
 * **Assignments and variables**: We say we assign what's on the right to the thing on the left: x = 17.4 assigns the number 17.4 to the variable x.
 * **Data types and structures**:
     * Strings. Strings are collections of characters in quotes: 'this is a string'.
     * Lists. Lists are collections of things in square brackets: [1, 'help', 3.14159].
     * Number types: integers vs. floats. Examples of integers include -1, 2, 5, 42. They cannot involve fractions. Floats use decimal points: 12.34. Thus 2 is an integer and 2.0 is a float.
+    * Dictionary. Dictionaries are collections of unordered things in `{}` with key-value pairs: names = {'Dave': 'Backus', 'Chase': 'Coleman'}.
+
     
 * **Built-in functions**: 
     * The `print()` function. Use `print('something', x)` to display the `value(s)` of the `object(s)` in parentheses.
