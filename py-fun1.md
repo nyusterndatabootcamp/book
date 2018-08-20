@@ -22,7 +22,7 @@ The challenge and beauty of writing computer programs is that we need to be prec
 
 We mix Python concepts with an introduction to **Jupyter** which also comes with its own features (outside of the Python ecosystem). A key feature of Jupyter notebooks is the ability to mix text with code. The text component is **Markdown** which is a text fromating language (you provide the text, it makes the style) that can easily be converted into HTML. May be **mtwn** but its ok!
 
-## Jupyter essentials.
+## Jupyter essentials
 
 **Opening Jupyter** Let's remind ourselves how to do this...
 
@@ -74,7 +74,7 @@ Let's put some of these tools to work:
 
   Run this cell as well.
 
-You get the idea.  To get a sense of what's possible, take a look at these two notebooks [1](https://github.com/NYUDataBootcamp/Materials/blob/master/Code/notebooks/bootcamp_test.ipynb) [2](http://nbviewer.ipython.org/github/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb).
+You get the idea.  To get a sense of what's possible, take a look at these two notebooks [1](https://github.com/NYUDataBootcamp/Materials/blob/master/Code/notebooks/bootcamp_test.ipynb) [2](http://nbviewer.ipython.org/github/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb).   
 
 In addition to the buttons near the top of your notebook, there are also **keyboard shortcuts** for all these commands. We'll tell you about them along the way. Once we got used to them, we found that the keyboard shortcuts are an easier and more efficient way to do what we need. Here are the ones I find most useful:
 
@@ -84,7 +84,9 @@ In addition to the buttons near the top of your notebook, there are also **keybo
 
 * To run a cell, just hit `shift` and `enter` at the same time.  
 
-**Markdown essentials.**  Markdown is a simplified version of html ("hypertext markup language"), the language used to construct basic websites.  html was a great thing in 1995, but now that the excitement has worn off we find it painful.  Markdown, however, has a zen-like simplicity and beauty.  Here are some things we can do with it:
+## Markdown essentials
+
+Markdown is a simplified version of html ("hypertext markup language"), the language used to construct basic websites.  `html` was a great thing in 1995, but now that the excitement has worn off we find it painful.  Markdown, however, has a zen-like simplicity and beauty.  Here are some things we can do with it:
 
 * Headings.  Large bold headings are marked by hashes (`#`).  One hash for first level (very large), two for second level (a little smaller), three for third level (smaller still), four for fourth (the smallest).  Try these in a Markdown cell to see how they look:
 
@@ -194,7 +196,7 @@ Out[5]: 8
 
 **Exercise.** What does the calculation `2 ** 3` produce?
 
-Our last calculation is the log function.  Entering `log(3)` generates the message:  `NameError: name 'log' is not defined`.   This is an example of a **syntax error**:  we have used language that Python doesn't understand.  Here the message is pretty clear:  it doesn't know what `log` means.  In other cases, the error message may be more mysterious.  We can use functions like `log` and `sqrt` in Python, just as we do in Excel, but we need to import them specially.  (And we will, but not yet.)
+Our last calculation is the log function.  Entering `log(3)` generates the message:  `NameError: name 'log' is not defined`.   This is an example of a **name error**:  we have used a variable or function that we have not defined so that python doesn't understand.  Here the message is pretty clear:  it doesn't know what `log` means.  In other cases, the error message may be more mysterious.  We can use functions like `log` and `sqrt` in Python, just as we do in Excel, but we need to import them specially.  
 
 **Exercise.**  What happens if you try to calculate the square root of 2 with `sqrt(2)`, as you would in Excel?  How would you do it (You don't need to import it -- Hint: square root is a power)?
 
@@ -273,7 +275,7 @@ In [11]: print(z)
 0.6666666666666666
 ```
 
-Evidently this displays the value of `z`, namely `0.6666666666666666`.  We will use print statements a lot to track the progress of our code. We need to do this because Python -- and all other programming languages -- will not report back the results of what we ask it to compute unless we tell it to do so.
+Evidently this displays the value of `z`, namely `0.6666666666666666`.  We will use print statements a lot to track the progress of our code.  We need to do this because Python -- and all other programming languages -- will not report back the results of what we ask it to compute unless we tell it to do so.
 
 The print function displays whatever we include in parentheses after the word print:  for example, `print(x)`.  If we want to print more than one thing, we separate them with commas; for example, `print(x, y)`. That's the **general structure of functions** in Python:  a function name (in this case `print`) followed by inputs ("arguments" or "parameters") in parentheses that are separated by commas.  We usually refer to the `print()` function, with explicit parentheses, to remind ourselves that it requires input of some kind.
 
@@ -350,11 +352,11 @@ https://en.wikipedia.org/wiki/String_literal
 
 ## Structuring code within Jupyter
 
-Lets take a quick step back and discuss how to **use** Jupyter to create effective, readable code. Often we are writing much longer programs. In this case it would be silly to have every single cell be composed of just one line. Why? Lots of reasons, but the most important reasons is that that reading the code AND understanding it's context within the whole program would be very hard to do. **And readable code is something that we should aspire to (see the links in the next section).**
+Lets take a quick step back and discuss how to **use** Jupyter to create effective, readable code. Often we are writing much longer programs. In this case it would be silly to have every single cell be composed of just one line. Why? Lots of reasons, but the most important reasons is that that reading the code AND understanding it's context within the whole program would be very hard to do. **And readable code is something that we should aspire to.**
 
 OK. What should I do? Use a code cell for a certain task. For example, one code cell is dedicated to reading in the data. Another code cell performs one manipulation of the data (which could take multiple lines of code), another code cell performs a different manipulation, and then another is dedicated to plotting a figure. So each code cell is accomplishing a specific task at hand.
 
-Why not put everything in one code cell? Again, this is problematic regarding readability. Second, chopping up the code into different cells is good for debugging. For example, you may have aspects of your code that works, but other parts are having problems (it will happen...). So rather than running the whole program over and over again to debug only a subset, you have that subset of code in its own cell and then work on that on its own.
+Why not put everything in one code cell? Again, this is problematic regarding readability. Second, chopping up the code into different cells is good for debugging. For example, you may have aspects of your code that works, but other parts are having problems, which happens sometimes. So rather than running the whole program over and over again to debug only a subset, you have that subset of code in its own cell and then work on that on its own.
 
 Let's give it a try.  Type these commands into **one** code cell:
 
@@ -732,8 +734,7 @@ Fact of life: **you will make errors.** Manny errors. The key to programming is 
 
 Point (i) is a life skill that takes years to learn. However, we can help you with (ii), below we talk through some very common error messages and how to identify them. 
 
-**Name Error.**
-It happens when we use something not defined, it could be a variable or a function. The associated output is an error message that includes (i) what line the issue is occuring in and (ii) the name that could not be found. Here are two examples:
+**Name Error.**  It happens when we use something not defined, it could be a variable or a function. The associated output is an error message that includes (i) what line the issue is occuring in and (ii) the name that could not be found. Here are two examples:
 
 ```python
 # Using not defined variable
@@ -744,34 +745,33 @@ print(NotDefined)
 
 log(3)
 ```
-Run the code and then you see in both of these instances that there is an arrow pointing to the line within each code cell. In the first instance it is pointing to line 2. This is where the issue is. In the second instance, it is pointing to line number 3. 
+Run the code and then you see in both of these instances that there is an arrow pointing to the line within each code cell.  In the first instance it is pointing to line 2.  This is where the issue is. In the second instance, it is pointing to line number 3. 
 
 And after pointing to the issue, below that is says ``NameError:`` and stuff. In the first instance, it tells us `NotDefined` is not defined. In the second instance, its saying the same thing. It just does not know what "log" is. 
 
-**Type Error.** This one happens all the time too. It happens when an inappropriate operation or function is applied to that specific data type. Here are some examples:
+**Type Error.**  This one happens all the time too.  It happens when an inappropriate operation or function is applied to that specific data type. Here are some examples:
 ```python
 x = "2"
 y = 2
 
 z = x + y
 ```
-Like above, it tells us that line number 4 is the issue, i.e. where we are tying to add "2" and 2. And the issue is a type issue, we can't add two different types (in this case a string and an integer).
+Like above, it tells us that line number 4 is the issue, i.e. where we are tying to add "2" and 2.  And the issue is a type issue, we can't add two different types (in this case a string and an integer).
 
-Here is another example relating to tuples. Recall that with a tuple, the data type is immutable. That is it can't be changed. But let's try and change it.
+Here is another example relating to tuples.  Recall that with a tuple, the data type is immutable.  That is it can't be changed.  But let's try and change it.
 
 ```python
 tuple_error=(2,3)
 tuple_error[0]=5
 ```
-There is a ``TypeError`` problem. And what is the specific issue, well the tuple object does not support this kind of operation.
+There is a ``TypeError`` problem.  And what is the specific issue, well the tuple object does not support this kind of operation.
 
-**Important** A lot of the problams in interperting the error message lies in deciphering the cryptic messages like "'tuple' object does not support item assignment" So how do we do this.**Use google.** Often the first result will be a question posted to [www.stackoverflow.com](www.stackoverflow.com) which is a place for programers to ask and answer questions. This is a good place to be comfortable with and seek help from. 
+**Important**  A lot of the problams in interperting the error message lies in deciphering the cryptic messages like "'tuple' object does not support item assignment" So how do we do this.  **Use google.**  Often the first result will be a question posted to [www.stackoverflow.com](www.stackoverflow.com) which is a place for programers to ask and answer questions. This is a good place to be comfortable with and seek help from. 
 
-**Excercise:** In the google search area type "tuple' object does not support item assignment" What did you find? 
+**Excercise.**  In the google search area type "tuple' object does not support item assignment" What did you find? 
 
 
-**Invalid Syntax.**
-Syntax errors can be detected before your program begins to run. These types of errors are usually typing mistakes (fat fingers), but migth be hard to find out at first. Here we give two examples:
+**Invalid Syntax.**  Syntax errors can be detected before your program begins to run.  These types of errors are usually typing mistakes (fat fingers), but migth be hard to find out at first.  Here we give two examples:
 
 ```python
 # Define a simple list and let's call the first one in the list
@@ -781,28 +781,26 @@ randomlist[0]]
 # Or when we define a string
 bad_string = 'code"
 ```
-**Key Error.**
-Python raises a *KeyError* whenever a `dict()` object is requested (using the format `a = adict[key]`) and the key is not in the dictionary.
+**Key Error.**  Python raises a *KeyError* whenever a `dict()` object is requested (using the format `a = adict[key]`) and the key is not in the dictionary.
 
 ```python
 names = {'Dave': 'Backus', 'Chase': 'Coleman', 'Spencer': 'Lyon', 'Glenn': 'Okun'}
 names['David']
 ```
-**"No Idea" Errors.**
+**"No Idea" Errors.**  These are errors that you have no idea what is going on.  A couple of tips:
 
-These are errors that you have no idea what is going on. A couple of tips:
-- **Ask a friend.** While the movie vision of a coder is some guy in a hoody in a dark room by himself, this is not how we work. Working together, as a team, is an important aspect of data analysis and coding in general. So if you have a problem, ask for help. Explain to him/her what you were trying to do (often just this process helps solve the issue) and then show them the output.
+- **Ask a friend.**  While the movie vision of a coder is some guy in a hoody in a dark room by himself, this is not how we work. Working together, as a team, is an important aspect of data analysis and coding in general.  So if you have a problem, ask for help.  Explain to him/her what you were trying to do (often just this process helps solve the issue) and then show them the output.
 
-- **Google fu** Use google. Chances are you are not the first one to have this problem. Just cut and past the error message into google and track down what other people have to say about it.
+- **Google fu**  Use google.  Chances are you are not the first one to have this problem.  Just cut and past the error message into google and track down what other people have to say about it.
 
 ## Review Questions
 
 Work with your neighbor on these review exercises:
 
-**Exercise.** Take turns with your neighbor explaining these terms:
-integer, float, string, list, tuple, function, tab completion.
+**Exercise.**  Take turns with your neighbor explaining these terms:
+integer, float, string, list, tuple, function.
 
-**Exercise.** What types are these expressions?  What lengths?
+**Exercise.**  What types are these expressions?  What lengths?
 
 ```python
 a = 1234
@@ -812,7 +810,7 @@ d = [1, 2, 3, 4]
 e = (1, 2, 3, 4)
 ```
 
-**Exercise.** Describe the results of these operations:
+**Exercise.**  Describe the results of these operations:
 
 ```python
 a + b
@@ -821,7 +819,7 @@ d + d
 d.append(a)
 ```
 
-**Exercise.** Describe the results of these operations:
+**Exercise.**  Describe the results of these operations:
 
 ```python
 str(float('3.1416'))
@@ -830,22 +828,22 @@ str(len('3.1416'))
 str(len(3.1416))
 ```
 
-**Exercise.** Take the object `numbers = {1: 'one', 2: 'two'}`.  What type is it?  Extract the keys as a list.  Extract the values as a list.
+**Exercise.**  Take the object `numbers = {1: 'one', 2: 'two'}`.  What type is it?  Extract the keys as a list.  Extract the values as a list.
 
 
 ## Summary
 
-* **Assignments and variables**: We say we assign what's on the right to the thing on the left: x = 17.4 assigns the number 17.4 to the variable x.
+* **Assignments and variables**:  We say we assign what's on the right to the thing on the left: x = 17.4 assigns the number 17.4 to the variable x.
 * **Data types and structures**:
-    * Strings. Strings are collections of characters in quotes: 'this is a string'.
-    * Lists. Lists are collections of things in square brackets: [1, 'help', 3.14159].
-    * Number types: integers vs. floats. Examples of integers include -1, 2, 5, 42. They cannot involve fractions. Floats use decimal points: 12.34. Thus 2 is an integer and 2.0 is a float.
-    * Dictionary. Dictionaries are collections of unordered things in `{}` with key-value pairs: names = {'Dave': 'Backus', 'Chase': 'Coleman'}.
+    * Strings.  Strings are collections of characters in quotes: 'this is a string'.
+    * Lists.  Lists are collections of things in square brackets: [1, 'help', 3.14159].
+    * Number types:  integers vs. floats.  Examples of integers include -1, 2, 5, 42.  They cannot involve fractions.  Floats use decimal points: 12.34. Thus 2 is an integer and 2.0 is a float.
+    * Dictionary.  Dictionaries are collections of unordered things in `{}` with key-value pairs: names = {'Dave': 'Backus', 'Chase': 'Coleman'}.
 
     
 * **Built-in functions**: 
-    * The `print()` function. Use `print('something', x)` to display the `value(s)` of the `object(s)` in parentheses.
-    * The `type()` function. The command `type(x)` tells us what kind of object x is. Past examples include integers, floating point numbers, strings, and lists.
+    * The `print()` function.  Use `print('something', x)` to display the `value(s)` of the `object(s)` in parentheses.
+    * The `type()` function.  The command `type(x)` tells us what kind of object x is.  Past examples include integers, floating point numbers, strings, and lists.
     
 * **Type conversions**: 
     * Use `str()` to convert a float or integer to a string. 
@@ -853,21 +851,21 @@ str(len(3.1416))
     * Use `list()` to convert a string to a list of its characters.
 
 * **Error message types**:
-    * NameError. Usually happens when using something not defined which could be variable or methods.
-    * TypeError. Raise when an operation or function is applied to an object of inappropriate type. For example, tuples have no `"="` methods while number no `len`.   
-    * Invalid syntax. Syntax errors can be detected before your program begins to run. So first thing to do is to check typos, parentheses, etc.
-    * KeyError. It happens when you refer a key not previously defined in the dictionary. 
+    * NameError.  Usually happens when using something not defined which could be variable or methods.
+    * TypeError.  Raise when an operation or function is applied to an object of inappropriate type.  For example, tuples have no `"="` methods while number no `len`.   
+    * Invalid syntax.  Syntax errors can be detected before your program begins to run. So first thing to do is to check typos, parentheses, etc.
+    * KeyError.  It happens when you refer a key not previously defined in the dictionary. 
 
 **Useful Tricks and Programming Tools**
 
-* **Comments.** Use the hash symbol # to add comments to your code and explain what you’re doing. Don't underestimate the importance of creating well commented code. Here are some thoughts on this...
+* **Comments.**  Use the hash symbol # to add comments to your code and explain what you’re doing.  Don't underestimate the importance of creating well commented code.  Here are some thoughts on this...
     - https://blogs.msdn.microsoft.com/oldnewthing/20070406-00/?p=27343
     - https://blog.codinghorror.com/when-understanding-means-rewriting/
 
 
-* **Help.** We can get help for a function or method foo by typing `foo?` in the IPython console or foo in the Object explorer. Try each of them with the `type()` function to remind yourself how this works.
+* **Help.**  We can get help for a function or method foo by typing `foo?` in the IPython console or foo in the Object explorer. Try each of them with the `type()` function to remind yourself how this works.
 
-* **Error Messages** Look at the message, (i) read where the issue is and (ii) track down what the message is associated with that line. Or ask a friend!
+* **Error Messages**  Look at the message, (i) read where the issue is and (ii) track down what the message is associated with that line. Or ask a friend!
 
 
 ## Resources
