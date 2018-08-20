@@ -3,7 +3,7 @@
 ---
 **Overview.**   More core Python. Part 2 of 2.
 
-**Python tools.**  Boolean variables, comparisons, conditionals (if, else), slicing, loops (for), function definitions.
+**Python tools.**  Boolean variables, comparisons, conditionals (if, else), slicing, loops (for), function definitions and objects.
 
 **Buzzwords.**  Code block, data structures, list comprehension, gotcha, PEP8.
 
@@ -595,9 +595,9 @@ print(y)
 Here `y` hasn't changed, it's not connected to `x`.
 -->
 
-## Objects and methods
+## Objects
 
-As we noted, lots of things in Python are **objects**.  **Methods** are ready-to-go things we can do with these objects.  The available methods depend on the object.  A lot of Python is "object-oriented," which means we apply methods to objects to accomplish what you might think you need a function for.  Trust us, the jargon is harder than just doing it.
+This is a key feature of python, which is an [object oriented programming language](https://en.wikipedia.org/wiki/Object-oriented_programming). What does that mean? For us this means that every thing is really an object with associated **methods** and **attributes**. A method is like a function that already togo with the given object. Methods in python are always completed with `()` . Attributes are go-to-go attributes about the object that can be accessed easily. What this means is that there are simple built-in ways to get information and perform operations on objects without having to write our on functions. A typical example is the `dictionaries` data structure and we have learned how to use its  
 
 <!--
 	(Experts might say at this point:  an object is an "instance" of a "class."  Ignore them.)
