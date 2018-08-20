@@ -3,9 +3,9 @@
 ---
 **Overview.**   More core Python. Part 2 of 2.
 
-**Python tools.**  Boolean variables, comparisons, conditionals (if, else), slicing, loops (for), function definitions and objects.
+**Python tools.**  Boolean variables, comparisons, conditionals (if, else), slicing, loops (for), tab completion, function definitions and objects.
 
-**Buzzwords.**  Code block, data structures, list comprehension, gotcha, PEP8.
+**Buzzwords.**  Code block, data structures, list comprehension, PEP8.
 
 **Code.**  [Link](https://github.com/nyusterndatabootcamp/notebooks/blob/master/book_notebooks/python_fundamentals_two.ipynb).
 
@@ -22,10 +22,8 @@ Some things from previous chapters that we'll use a lot:
 * Assignments and variables.  We say we assign what's on the right to the thing on the left:  `x = 17.4` assigns the number `17.4` to the variable `x`.
 
 * Data types and structures, e.g., **Number types: integers vs. floats**, **lists**, **strings**, and **dictionaries**, etc.  
-I
-* Built-in functions, such as `print()`, `type()` and `len()`. 
 
-* Type conversions. Use `str()` to convert a float or integer to a string. Use `float()` or `int()` to convert a string into a float or integer.  Use `list()` to convert a string to a list of its characters.
+* Built-in functions, such as `print()`, `type()` and `len()`. In particular, we learned several type conversions functions. For example, use `str()` to convert a float or integer to a string. Use `float()` or `int()` to convert a string into a float or integer.  Use `list()` to convert a string to a list of its characters.
 
 * Comments. Use the hash symbol `#` to add comments to your code and explain what you’re doing.
 
@@ -33,7 +31,7 @@ I
 
 * Help.  We can get help for a function or method `foo` by typing `foo?` in the IPython console or `foo` in the Object explorer.  Try each of them with the `type()` function to remind yourself how this works.
 
-And while we're reviewing:   Start Jupyter, open a new file, and save as `bootcamp_class_pyfun2.py` in your `Data_Bootcamp` directory/folder.
+And while we're reviewing:  Start Jupyter, open a new file, and save as `bootcamp_class_pyfun2.py` in your `Data_Bootcamp` directory/folder.
 
 ## Comparisons
 
@@ -73,7 +71,7 @@ Out[2]: False
 ```
 Think about that for a minute and evaluate it piece by piece. `1>0` returns `True` and `not True` is false. Additionally, remind yourself that spaces don't matter in Python expressions.
 
-We can do the same thing with variables.  Suppose we want to compare the values of variables `x` and `y`.  Which one is bigger?  To see how this works, we run the code
+We can do the same thing with variables.  Suppose we want to compare the values of variables `x` and `y`.  Which one is bigger?  To see how this works, we run the code:
 
 ```python
 x = 2*3
@@ -198,17 +196,17 @@ The `else` statement adds the second branch to the decision tree:  what to do if
 **Exercise.** Take the names `name1` and `name2`, both of them strings.  Write a program using `if` and `else` that prints the name that comes first in alphabetical order.  Test your program with `name1 = 'Dave'` and `name2 = 'Glenn'`.
 
 
-## Slicing strings and lists
+## Slicing
 
-We can access the elements of strings and lists by specifying the item number in square brackets. This operation is referred to as **slicing**, probably because we're slicing off pieces, like a cake.  The only tricky part of this is remembering that **Python starts numbering at zero**.
+We can access the elements of strings and lists by specifying the item number in square brackets. This operation is referred to as **slicing**, probably because we're slicing off pieces, like a cake.  The only tricky part of this is remembering that **Python starts indexing at zero**.
 
 **Exercise.**  Take the string `a = 'some'`.  What is `a[1]`?
 
-What just happened?  Python starts numbering at zero.  If we want the first item/letter, we use `a[0]`.  If we want the second, we use `a[1]`.  And so on.  We can summarize the numbering convention by writing the word `some` on a piece of paper.  Below it, write the numbers, in order:  0, 1, 2, 3.  Label this row "counting forward."
+What just happened?  Python starts indexing at zero.  If we want the first item/letter, we use `a[0]`.  If we want the second, we use `a[1]`.  And so on.  We can summarize the numbering convention by writing the word `some` on a piece of paper.  Below it, write the numbers, in order:  0, 1, 2, 3.  Label this row "counting forward."
 
 We can also count backward, but again Python has its own numbering convention.  If we want the last letter, we use `a[-1]`.  And if we want the one before the last one, we type `a[-2]`.  In this case we get the same answer if we type `a[2]`.  Both give us `'m'`.
 
-Let's track this "backward" numbering system in our example.  Below the "counting forward" numbers, start another row.  Below the letter `e` write -1.  As we move to the left, we type, -2, -3, -4.  Label this row "counting backward."
+Let's track this "backward" numbering system in our example.  Below the "counting forward" numbers, start another row.  Below the letter `e` writes -1.  As we move to the left, we type, -2, -3, -4.  Label this row "counting backward."
 
 **Exercise.** Take the string `firstname = 'Monty'` and write below it the forward and backward counting conventions.  What integer would you put in square brackets to extract the third letter (`n`) under each system?
 
@@ -355,7 +353,7 @@ for letter in word:
 
 We now know how loops work.  Here's another version in which we loop over something a fixed number of times. For example, we might want to sum or average the values of a variable.  Or value a bond with a fixed number of coupon payments.  Or something.
 
-The new ingredient is the `range()` function. `range(n)` gives us all the integers (whole numbers) from `0` to `n-1`.  (If that sounds strange, remind yourself how slicing works.)  And `range(n1, n2)` gives us all the whole numbers from `n1` to `n2-1`.  We can use it in lots of ways, but loops are a prime example.
+The new ingredient is the `range()` function. `range(n)` gives us all the integers (whole numbers) from `0` to `n-1`.  (If that sounds strange, remind yourself how slicing works.)  And `range(n1, n2)` gives us all the whole numbers from `n1` to `n2-1`.  We can use it in lots of ways, but loops are a prime example. 
 
 Some examples illustrate how this works:
 
@@ -508,7 +506,7 @@ hello('Chase')                      # use the function
 
 Let's go through this line by line:
 
-* The initial `def` statement defines the function, names it `hello`, identifies the input as `firstname`, and ends with a colon (:).
+* The initial `def` statement defines the function, names it `hello`, identifies the input as `firstname`, and ends with a colon (**:**).
 * The following statement(s) are indented the usual four spaces and specify what the function does.  In this case, it prints `Hello,` followed by whatever `firstname` happens to be.  Python understands that the function ends when the indentation ends.
 * The last line "calls" the function with input `Chase`.  Note that the name in the function's definition and its use need not be the same.
 
@@ -597,7 +595,7 @@ Here `y` hasn't changed, it's not connected to `x`.
 
 ## Objects
 
-This is a key feature of python, which is an [object oriented programming language](https://en.wikipedia.org/wiki/Object-oriented_programming). What does that mean? For us this means that every thing is really an object with associated **methods** and **attributes**. A method is like a function that already togo with the given object. Methods in python are always completed with `()` . Attributes are go-to-go attributes about the object that can be accessed easily. What this means is that there are simple built-in ways to get information and perform operations on objects without having to write our on functions. A typical example is the `dictionaries` data structure and we have learned how to use its  
+This is a key component of python, which is an [object oriented programming language](https://en.wikipedia.org/wiki/Object-oriented_programming). What does that mean? For us this means that every thing is really an object with associated **methods** and **attributes**. A method is like a function that already togo with the given object. Methods in python are always completed with `()` . Attributes are go-to-go attributes about the object that can be accessed easily. What this means is that there are simple built-in ways to get information and perform operations on objects without having to write our on functions. A typical example is the `dict()` object and we have learned how to retrive its keys and values, etc. We will learn more about `list()` objects in this section. 
 
 <!--
 	(Experts might say at this point:  an object is an "instance" of a "class."  Ignore them.)
@@ -741,7 +739,7 @@ https://github.com/amontalenti/elements-of-python-style
 * Convert the list of tuples into a dictionary.
 
 
-**Exercise.** Set `name = 'Jones'`.  Use (a) tab completion to find a method that coverts `name` to upper case (capital) letters and (b) the Object inspector to find out how to use that method.  *Bonus:* How else can you get help in Spyder for methods and functions?
+**Exercise.** Set `name = 'Jones'`.  Use (a) tab completion to find a method that coverts `name` to upper case (capital) letters and (b) the Object inspector to find out how to use that method. <!-- *Bonus:* How else can you get help in Spyder for methods and functions?-->
 
 **Exercise (challenging).** Use tab completion and the Object inspector to find and apply a method to the string `name` that counts the number of appearances of the letter s.  Use `name = 'Ulysses'` as a test case.
 
@@ -758,7 +756,7 @@ https://github.com/amontalenti/elements-of-python-style
 
 * **Functions**: we learn how to define and use customized functions. 
 
-* **Objects**: a core concept in a object oriented programming language like python. It can help us understand how we can use **`.`** operations to call methods and attributes in an object. 
+* **Objects**: a core concept in a object oriented programming language like python. It can help us understand how we can use **`.`** operations (**tab completion**) to call methods and attributes in an object. 
 
 
 ## Resources
