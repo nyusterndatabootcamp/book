@@ -22,7 +22,7 @@ Some things from previous chapters that we'll use a lot:
 * Assignments and variables.  We say we assign what's on the right to the thing on the left:  `x = 17.4` assigns the number `17.4` to the variable `x`.
 
 * Data types and structures, e.g., **Number types: integers vs. floats**, **lists**, **strings**, and **dictionaries**, etc.  
-
+I
 * Built-in functions, such as `print()`, `type()` and `len()`. 
 
 * Type conversions. Use `str()` to convert a float or integer to a string. Use `float()` or `int()` to convert a string into a float or integer.  Use `list()` to convert a string to a list of its characters.

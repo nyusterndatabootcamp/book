@@ -3,8 +3,8 @@
 ---
 **Overview.**  Time to start programming!  We work our way through some of the essentials of Python's core language.  We will do this within a Jupyter Notebook and along the way become familiar Markdown other properties of the notebook environment.  Part 1 of 2.
 
-**Pythons.**  Syntax, Jupyter, calculations, assignments, strings, lists, dictionaries, built-in functions, tab completion, object inspector, bug identification and fix. 
-
+**Pythons.**  Syntax, Jupyter, calculations, assignments, strings, lists, dictionaries, built-in functions, bug identification and fix. 
+  
 **Buzzwords.** Isn't that enough?
 
 **Code.**  [Link](https://github.com/nyusterndatabootcamp/notebooks/blob/master/book_notebooks/python_fundamentals_one.ipynb).
