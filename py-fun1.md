@@ -531,6 +531,12 @@ Tuples are ordered collections of things in parentheses separated by commas.  Th
 **Example.**  This is a tuple: `t = (1, 5, -3)`.
 
 
+##  Dictionaries
+
+The term **[data structure][5]** refers to the organization of a collection of data.  Strings and lists are examples.  Here we look another one:  dictionaries. We won't use them a lot, but when we do they're close to indispensible.
+
+[5]: http://en.wikipedia.org/wiki/Data_structure
+
 **Dictionaries** are (unordered) pairs of things defined by curly brackets `{}`, separated by commas, with the items in each pair separated by colon.  For example, a list of first and last names:
 
 ```python
@@ -546,6 +552,34 @@ We teach ourselves the rest:
 **Exercise.** Print `names`.  Does it come out in the same order we typed it?
 
 **Exercise.** Construct a dictionary whose keys are the integers 1, 2, and 3 and whose values are the same numbers as words:  one, two, three.  How would you get the word associated with the key `2`?
+
+**Exercise.** Enter the code
+
+```python
+d = {'Donald': 'Duck', 'Mickey': 'Mouse', 'Donald': 'Trump'}
+print(d)
+```
+
+What do you see?  Why do you think this happened?
+
+**Exercise.** Describe -- and explain if possible -- the output of these statements:
+
+* `list(names)`?
+* `names.keys()`?
+* `list(names.keys())`?
+* `names.values()`?
+
+**Exercise.** Consider the dictionary
+
+```python
+data = {'Year': [1990, 2000, 2010], 'GDP':  [8.95, 12.56, 14.78]}
+```
+
+What are the keys here?  The values?  What do you think this dictionary represents?
+
+<!--
+**Exercise.** What happens if we try to slice a dictionary the way we slice lists and strings?  For example, try `x = states[0]`.  What happens?  Why?
+-->
 
 **Exercise.** Enter the code
 
