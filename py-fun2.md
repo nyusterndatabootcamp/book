@@ -7,7 +7,7 @@
 
 **Buzzwords.**  Code block, data structures, list comprehension, gotcha, PEP8.
 
-**Code.**  [Link](https://raw.githubusercontent.com/NYUDataBootcamp/Materials/master/Code/Python/bootcamp_fundamentals_2.py).
+**Code.**  [Link](https://github.com/nyusterndatabootcamp/notebooks/blob/master/book_notebooks/python_fundamentals_two.ipynb).
 
 ---
 
@@ -21,80 +21,19 @@ Some things from previous chapters that we'll use a lot:
 
 * Assignments and variables.  We say we assign what's on the right to the thing on the left:  `x = 17.4` assigns the number `17.4` to the variable `x`.
 
-* Strings.  Strings are collections of characters in quotes:  `'this is a string'`.
+* Data types and structures, e.g., **Number types: integers vs. floats**, **lists**, **strings**, and **dictionaries**, etc.  
 
-* Lists. Lists are collections of things in square brackets:  `[1, 'help', 3.14159]`.
-
-* Number types: integers vs. floats. Examples of integers include -1, 2, 5, 42. They cannot involve fractions. Floats use decimal points:  `12.34`.  Thus `2` is an integer and `2.0` is a float.
-
-* The `print()` function. Use `print(‘something’, x)` to display the value(s) of the object(s) in parentheses.
-
-* The `type()` function.  The command `type(x)` tells us what kind of object `x` is.  Past examples include integers, floating point numbers, strings, and lists.
+* Built-in functions, such as `print()`, `type()` and `len()`. 
 
 * Type conversions. Use `str()` to convert a float or integer to a string. Use `float()` or `int()` to convert a string into a float or integer.  Use `list()` to convert a string to a list of its characters.
 
-* Methods and objects.  It's common in Python to work with objects using methods.  We apply the method `justdoit` to the object `x` by typing `x.justdoit`.
-
-
 * Comments. Use the hash symbol `#` to add comments to your code and explain what you’re doing.
 
-* Tab completion.  To find the list of methods available for a hypothetical object `x`, type `x.[tab]` in an IPython (Jupyter) notebook.  We call that "tab completion."
+* Error Messages. Have covered 4 common mistakes: **NameError**, **TypeError**, **Invalid syntax** and **KeyError**. Be familiar with them.
 
 * Help.  We can get help for a function or method `foo` by typing `foo?` in the IPython console or `foo` in the Object explorer.  Try each of them with the `type()` function to remind yourself how this works.
 
 And while we're reviewing:   Start Jupyter, open a new file, and save as `bootcamp_class_pyfun2.py` in your `Data_Bootcamp` directory/folder.
-
-
-##  Dictionaries
-
-The term **[data structure][5]** refers to the organization of a collection of data.  Strings and lists are examples.  Here we look another one:  dictionaries. We won't use them a lot, but when we do they're close to indispensible.
-
-[5]: http://en.wikipedia.org/wiki/Data_structure
-
-**Dictionaries** are (unordered) pairs of things defined by curly brackets `{}`, separated by commas, with the items in each pair separated by colon.  For example, a list of first and last names:
-
-```python
-names = {'Dave': 'Backus', 'Chase': 'Coleman', 'Spencer': 'Lyon', 'Glenn': 'Okun'}
-```
-
-If we try `type(names)`, the reply is `dict`, meaning dictionary.  The components of each pair are referred to as the **key** (the first part) and the **value** (the second).  In a real dictionary, the word is the key and the definition is the value.  The keys must be unique, but the values need not be.
-
-We access the value from the key with syntax of the form: `dict[key]`.  In the example above, we get Glenn's last name by typing `names['Glenn']`.  (Try it and see.)
-
-We teach ourselves the rest:
-
-**Exercise.** Print `names`.  Does it come out in the same order we typed it?
-
-**Exercise.** Construct a dictionary whose keys are the integers 1, 2, and 3 and whose values are the same numbers as words:  one, two, three.  How would you get the word associated with the key `2`?
-
-**Exercise.** Enter the code
-
-```python
-d = {'Donald': 'Duck', 'Mickey': 'Mouse', 'Donald': 'Trump'}
-print(d)
-```
-
-What do you see?  Why do you think this happened?
-
-**Exercise.** Describe -- and explain if possible -- the output of these statements:
-
-* `list(names)`?
-* `names.keys()`?
-* `list(names.keys())`?
-* `names.values()`?
-
-**Exercise.** Consider the dictionary
-
-```python
-data = {'Year': [1990, 2000, 2010], 'GDP':  [8.95, 12.56, 14.78]}
-```
-
-What are the keys here?  The values?  What do you think this dictionary represents?
-
-<!--
-**Exercise.** What happens if we try to slice a dictionary the way we slice lists and strings?  For example, try `x = states[0]`.  What happens?  Why?
--->
-
 
 ## Comparisons
 
@@ -656,6 +595,77 @@ print(y)
 Here `y` hasn't changed, it's not connected to `x`.
 -->
 
+## Objects and methods
+
+As we noted, lots of things in Python are **objects**.  **Methods** are ready-to-go things we can do with these objects.  The available methods depend on the object.  A lot of Python is "object-oriented," which means we apply methods to objects to accomplish what you might think you need a function for.  Trust us, the jargon is harder than just doing it.
+
+<!--
+	(Experts might say at this point:  an object is an "instance" of a "class."  Ignore them.)
+-->
+
+Functions and methods differ primarily in their syntax:
+
+* Syntax of a **function**: `function(object)`
+* Syntax of a **method**: `object.method`
+
+We used the former in the previous section and consider the latter here.
+
+What methods are available to work with a given object?  Take, for example, the list `numberlist = [1, 5, -3]`.  To get the list of available methods, type in a code cell:
+
+```python
+numberlist.[tab]    # here you hit the tab key, don't type in the word "tab"
+
+```
+
+This wonderful piece of technology is referred to as **tab completion**.  The ingredients here are the object (here `numberlist`), the period or dot, and the tab key.  When you hit tab, a window will pop up with a list of methods in alphabetical order.  In our example, the list starts like this:
+
+```python
+numberlist.append
+numberlist.clear
+numberlist.copy
+numberlist.count
+```
+
+If we want more information about a method, we can type `object.method?` in a code cell.  For the method `numberlist.append`, we get the description
+
+```python
+Definition:  append(object)
+Type:  Function of None module
+L.append(object) -> None -- append object to end.
+```
+
+Well, that's pretty opaque, maybe we oversold this approach.  What `append` does is add an item to the end of a list.  Try using `append()`, then use `print()` to see the results:
+
+```python
+numberlist.append(7)
+print(numberlist)
+```
+
+That's another way to get information about a method: try it and see what happens.
+
+
+**Digression.**  We're trying to keep this simple, but we also want it to be accurate, so let us be more careful with the term **method**.  Needless to say, this is **mtwn**.  Tab completion gives us a list of two things:  *attributes* (properties of the object) and *methods* (essentially functions with different syntax).  The distinction isn't important to us, although we can tell a method because it comes with parentheses `()` (just like functions).
+
+
+**Example.** Set `firstname = 'Chase'`.  The method `lower` converts it to lower case.  If we type `firstname.lower` into the object inspector, we see that it comes with parentheses for additional inputs.  So we type `firstname.lower()` into a code cell.  The response is `'chase'`.  The parentheses are there to provide additional inputs -- arguments, we call them.  Without the parentheses, it doesn't work.
+
+
+**Exercise.** Find a method to convert `firstname` to all upper case letters.
+
+**Exercise.** This one also came up in our work.  Suppose we have a variable `z = '12,345.6'`.  What is its type?  Convert it to a floating point number without the comma.  Hint:  Use tab completion to find a method to get rid of the comma.
+
+<!-- z = z.replace(',', '') -->
+
+**Exercise.**  Run the code
+
+```python
+firstname = 'John'
+lastname  = 'Lennon'
+firstlast = firstname + ' ' + lastname
+```
+
+Find a method to replace the n's in `firstlast` with asterisks.
+
 
 ## Programming style
 
@@ -683,7 +693,7 @@ https://github.com/amontalenti/elements-of-python-style
 -->
 
 
-## Review
+## Review Questions
 
 **Exercise.** What type is each of these expressions?  What length?
 
@@ -705,9 +715,6 @@ https://github.com/amontalenti/elements-of-python-style
 * `'Chase' < 'Dave'`
 * `'Chase' < 'Dave' or 'Spencer' < 'Glenn'`
 * `'Chase' < 'Dave' and 'Spencer' < 'Glenn'`
-
-
-**Exercise.** Take the object `numbers = {1: 'one', 2: 'two'}`.  What type is it?  Extract the keys as a list.  Extract the values as a list.
 
 
 **Exercise.** Write a program that prints the last letter of each item in the list `names = ['Chase', Dave', 'Sarah', 'Spencer']`.  **Bonus (optional):** Print the last letter only if it's a vowel.
@@ -732,6 +739,26 @@ https://github.com/amontalenti/elements-of-python-style
 * Create a list that contains only the number names in `l2` that have three letters.
 * Write a list comprehesion that constructs the list of tuples `[(1, 1), (2, 4), (3, 9)]`.
 * Convert the list of tuples into a dictionary.
+
+
+**Exercise.** Set `name = 'Jones'`.  Use (a) tab completion to find a method that coverts `name` to upper case (capital) letters and (b) the Object inspector to find out how to use that method.  *Bonus:* How else can you get help in Spyder for methods and functions?
+
+**Exercise (challenging).** Use tab completion and the Object inspector to find and apply a method to the string `name` that counts the number of appearances of the letter s.  Use `name = 'Ulysses'` as a test case.
+
+
+## Summary
+
+* **Boolean variable and its operations**: We conduct the comparsion operation on the right: x = 3 > 2, and we can assign the boolean values (True or False) to the variable x. We also learned how to compare two strings.
+* **"if" conditional statement**: it allows us to do different things depending on the result of a comparison or Boolean variable.
+* **Slicing**: we learn **Forward** and **Backward** counting conventions in a list, do you know when to select which? We also cover using **`:`** operator to select groups of data.
+
+* **"for" Loop**:
+    * We can use `for` to loop through any iterable objects.
+    * We talk a common built-in iterable object/data sturcture: `range` to help us with the data slicing/indexing.
+
+* **Functions**: we learn how to define and use customized functions. 
+
+* **Objects**: a core concept in a object oriented programming language like python. It can help us understand how we can use **`.`** operations to call methods and attributes in an object. 
 
 
 ## Resources
