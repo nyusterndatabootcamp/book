@@ -5,7 +5,7 @@
 
 **Python tools.**  Boolean variables, comparisons, conditionals (if, else), slicing, loops (for), tab completion, function definitions and objects.
 
-**Buzzwords.**  Code block, data structures, list comprehension, PEP8.
+**Buzzwords.**  Code block, data structures, list comprehension, objects, PEP8.
 
 **Code.**  [Link](https://github.com/nyusterndatabootcamp/notebooks/blob/master/book_notebooks/python_fundamentals_two.ipynb).
 
