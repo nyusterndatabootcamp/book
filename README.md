@@ -10,7 +10,7 @@
 
 This document was created for the [NYU Stern](http://www.stern.nyu.edu/) [Data Bootcamp course](https://nyusterndatabootcamp.github.io/NYU-Data-Bootcamp/) by a team that includes David Backus, Sarah Beckett-Hile, Chase Coleman, Spencer Lyon, and Michael Waugh.  The idea is to give students experience with economic and financial data and introduce programming newbies to the benefits of moving beyond Excel.  We use the Python programming language, specifically Python's data management (pandas) and graphics tools (matplotlib). If that doesn't whet your appetite, we have a [more elaborate sales pitch](https://nyusterndatabootcamp.github.io/NYU-Data-Bootcamp/faq/).
 
-The book is primarily meant to be accessed via the internet. The former comes with links, which we think is a huge advantage, and can be updated quickly.  Everything available is here:
+The book is primarily meant to be accessed via the internet. It comes with links, which we think is a huge advantage, and can be updated quickly.  Everything available is here:
 
 https://nyudatabootcamp.gitbook.io/thebook/
 
