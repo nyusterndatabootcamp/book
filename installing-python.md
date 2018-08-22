@@ -111,6 +111,10 @@ We're now ready to write and run Python programs. Take a bow.
 
 **Exercise.** What version of Python are we using?
 
+**Exercise.** Explain to your friend (or yourself) what a Jupyter Notebook is.
+
+**Exercise.** Where is your ``Data_Bootcamp`` folder?
+
 
 ## Resources
 
