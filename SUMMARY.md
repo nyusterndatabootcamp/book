@@ -1,6 +1,6 @@
 # Summary
 
-* [Preface](README.md)
+* [DATA BOOTCAMP](README.md)
 * [Where are we headed?](intro.md)
 * [Installing Python](installing-python.md)
 * [The data mentality](data-mentality.md)
