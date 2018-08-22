@@ -2,9 +2,7 @@
 ## **[DATA BOOTCAMP](https://nyudatabootcamp.gitbook.io/thebook/)**
 #### Version 2.0
 
-**NYU Stern**
-
-**Department of Economics**
+**NYU Stern**<br>**Department of Economics**
 
 ---
 
