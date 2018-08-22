@@ -17,9 +17,7 @@ We'll will focus on one Python environment in this class:
 
  * **Jupyter** is a browser-based interface for running **Jupyter notebooks**, which combine code, output, and documentation. If you google around, you will see that this is _the_ format in which results are analyzed and communicated by data scientists. For example, here are some notebooks that make this point: [three](http://savvastjortjoglou.com/nba-shot-sharts.html) [more](http://nbviewer.ipython.org/url/jakevdp.github.com/downloads/notebooks/XKCD_plots.ipynb) [examples](https://github.com/NYUDataBootcamp/SQLBootcamp/blob/b048ce3986128941d32bf20731a56c47e17daad0/notebooks/SQL_Intro.ipynb) Get comfortable with it.
 
-In previous version of this course, we have also used a more traditional  "[IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)" to write and run code. This enviornment is useful, especially for more invovled computation that does not require the presentation and interactivity that Jupyter provides. **Spyder** is the IDE we have used in the past and it comes pre-installed with the Anaconda distribution. In future, keep an eye out for [**Jupyter Lab**](https://github.com/jupyterlab/jupyterlab) which is still under development, but combines the best of both worlds (interactive notebook and IDE) in one environment.
-
-We will write and run Python programs in both environments.
+**mtwn** In previous version of this course, we used a more traditional  "[IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)" to write and run code. This environment is useful, especially for more involved computations that does not require the presentation and interactivity that Jupyter provides. **Spyder** is the IDE we used and it comes pre-installed with the Anaconda distribution. In future, keep an eye out for [**Jupyter Lab**](https://github.com/jupyterlab/jupyterlab) which is still under development, but combines the best of both worlds (interactive notebook and IDE) in one environment.
 
 This is a lot of jargon to swallow at one time.  Don't panic, it will become familiar with use.  And anything we don't use you can safely ignore.
 
@@ -43,6 +41,7 @@ Follow these instructions.  By which we mean: **follow these instructions exactl
 **Step 3. Find and run IPython.**  Look wherever programs are on your computer.
 
  * Windows: Open the start menu by clicking the start button in the bottom left of your screen or by pressing the windows key. In the search box type "cmd" to open the command prompt. Once you have the command prompt open, type `conda -V`. It should tell you 4.x.y where x and y are just some numbers. Now type `ipython` to open a python session and type `print("Hello World")` and then `quit`
+
  * Mac: open spotlight either by clicking the magnifying glass in the top right of your screen or pressing command and the space bar at the same time. Type “Terminal” and press enter. Once you have the terminal prompt open, type `conda -V`. It should tell you 4.x.y where x and y are just some numbers. Now type `ipython` to open a python session and type `print("Hello World")` and then `quit`
 
 ![MacCommands](figs/Mac_Terminal_Commands.png "Mac")
@@ -52,12 +51,12 @@ If these commands worked and displayed something similar (version may be slightl
 
 ## Coding environments
 
-Coding environments are pieces of software we use to write and run code.  The best ones make coding easy, even pleasurable, strange as that might sound.  We'll focus on **Jupyter**. We will access this through either the command prompt (Windows) or terminal (Mac) which can be opened as described above. In the steps that follow I will refer to "terminal" -- This is what it is called on a Mac, but, if you are on a Windows machine, please just replace the word terminal with the word command prompt everywhere in this section.
+Coding environments are pieces of software we use to write and run code. The best ones make coding easy, even pleasurable, strange as that might sound.  We'll focus on **Jupyter**. We will access this through either the command prompt (Windows) or terminal (Mac) which can be opened as described above. In the steps that follow I will refer to "terminal" -- This is what it is called on a Mac, but, if you are on a Windows machine, please just replace the word terminal with the word command prompt everywhere in this section.
 
 If you still have a terminal open, great. If not, please open a new one (described in Step 3 above)
 
 
-**Jupyter.**  Jupyter is a graphical environment, which we use to create and run **Jupyter notebooks**. These notebooks combine code, output, words, and graphics.  It's a convenient format for presenting our work to others and can be used as a project report.  We'll use IPython notebooks in class in a few weeks.  In the meantime, here are [two](https://github.com/NYUDataBootcamp/Materials/blob/master/Code/notebooks/bootcamp_examples.ipynb) [examples](http://nbviewer.jupyter.org/url/norvig.com/ipython/How%20to%20Do%20Things%20with%20Words.ipynb).
+**Jupyter.**  Jupyter is a graphical environment, which we use to create and run **Jupyter notebooks**. These notebooks combine code, output, words, and graphics.  It's a convenient format for presenting our work to others and can be used as a project report.  
 
 To create or run a Jupyter notebook from the terminal, simply type `jupyter notebook` into the terminal and hit enter.  It will open a tab in your default browser.  (If you're not sure what that is, you'll soon find out.)  In the browser tab, you'll see something like this:
 
@@ -69,7 +68,7 @@ To create or run a Jupyter notebook from the terminal, simply type `jupyter note
 
 ## Run test programs
 
-Let's run a test program. IPython/Jupyter and make sure everything works.
+Let's run a test program  and make sure everything works.
 
 First, start the Jupyter notebook from the terminal.  (If you're not sure what this means, go back to the previous section.) Once you have it up and running:
 
@@ -110,19 +109,7 @@ We're now ready to write and run Python programs. Take a bow.
 
 ## Review
 
-**Exercise.** We have seen both **code files** and **environments** for working with them.  With this in mind, fill in the blanks in the table below and explain your answers to your neighbor.
-
-Environment | File
-:---: | :---:
-MS Word  | Word document
-MS Excel | Excel file  
-  | | IPython notebook  
-
-
-
 **Exercise.** What version of Python are we using?
-
-**Exercise.** Identify the editor, the IPython console, and the Object inspector in the Spyder picture above -- or your computer.
 
 
 ## Resources
