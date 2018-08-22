@@ -3,6 +3,7 @@
 #### Version 2.0
 
 **NYU Stern**
+
 **Department of Economics**
 
 ---
