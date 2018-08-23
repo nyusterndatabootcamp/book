@@ -56,4 +56,6 @@ We often put comments like this in our code.  Not quite this basic, but close. O
 
 Writing informative comments will not only lead to others thanking you for saving them time, but you will find that you thank yourself very frequently.
 
+Final point on comments: **Update your comments as you update your code!** Nothing is worse than finding comments that contradict the code. So as you modify your code, modify your comments. Again, so when you take a break and return to what your doing, you know what's up.
+
 **Exercise moving forward.** Practice writing comments **all the time**. Whenever you learn something new, write a comment explaining it in your code. It feels tedious, but the best coders always explain their work. It's a good habit to develop.
