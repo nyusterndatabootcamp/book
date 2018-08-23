@@ -5,6 +5,7 @@
 * [Installing Python](installing-python.md)
 * [The data mentality](data-mentality.md)
 * [Python fundamentals 1](py-fun1.md)
+* [Coding best practices 1](best_practice_coding_tips.md)
 * [Python fundamentals 2](py-fun2.md)
 * [Python packages](packages.md)
 * [Pandas 1: Introduction to Pandas](pandas-intro.md)

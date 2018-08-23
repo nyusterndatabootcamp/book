@@ -3,8 +3,8 @@
 ---
 **Overview.**  Time to start programming!  We work our way through some of the essentials of Python's core language.  We will do this within a Jupyter Notebook and along the way become familiar Markdown other properties of the notebook environment.  Part 1 of 2.
 
-**Pythons.**  Syntax, Jupyter, calculations, assignments, strings, lists, dictionaries, built-in functions, bug identification and fix. 
-  
+**Pythons.**  Syntax, Jupyter, calculations, assignments, strings, lists, dictionaries, built-in functions, bug identification and fix.
+
 **Buzzwords.** Isn't that enough?
 
 **Code.**  [Link](https://github.com/nyusterndatabootcamp/notebooks/blob/master/book_notebooks/python_fundamentals_one.ipynb).
@@ -20,7 +20,7 @@ Don't be panic, it's just jargon.  If you put some effort into this over the nex
 
 The challenge and beauty of writing computer programs is that we need to be precise.  If we mistype anything, the program won't work.  Or it might seem to work, but the output won't be what we expect.  In formal terms, the **syntax** -- the set of rules governing the language -- is less flexible than natural language (English, for example).
 
-We mix Python concepts with an introduction to **Jupyter** which also comes with its own features (outside of the Python ecosystem). A key feature of Jupyter notebooks is the ability to mix text with code. The text component is **Markdown** which is a text fromating language (you provide the text, it makes the style) that can easily be converted into HTML. May be **mtwn** but its ok!
+We mix Python concepts with an introduction to **Jupyter** which also comes with its own features (outside of the Python ecosystem). A key feature of Jupyter notebooks is the ability to mix text with code. The text component is [**Markdown** which is a text formatting language](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) (you provide the text, it makes the style) that can easily be converted into HTML. May be **mtwn** but its ok!
 
 ## Jupyter essentials
 
@@ -74,9 +74,9 @@ Let's put some of these tools to work:
 
   Run this cell as well.
 
-You get the idea.  To get a sense of what's possible, take a look at these two notebooks [1](https://github.com/NYUDataBootcamp/Materials/blob/master/Code/notebooks/bootcamp_test.ipynb) [2](http://nbviewer.ipython.org/github/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb).   
+You get the idea.  To get a sense of what's possible, take a look at [this notebook here](http://nbviewer.ipython.org/github/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb).   
 
-In addition to the buttons near the top of your notebook, there are also **keyboard shortcuts** for all these commands. We'll tell you about them along the way. Once we got used to them, we found that the keyboard shortcuts are an easier and more efficient way to do what we need. Here are the ones I find most useful:
+In addition to the buttons near the top of your notebook, there are also **keyboard shortcuts** for all these commands. We'll tell you about them along the way. Once we got used to them, we found that the keyboard shortcuts are an easier and more efficient way to do what we need. Here are the ones we find most useful:
 
 * The command for creating a new cell is to press escape to be in *command mode* and then press `a` to insert a new cell above the current one and `b` to insert a new cell below the current cell. How do I know the cell is in command mode? First, there should be a slim vertical bar to the left of the cell which should be blue when in command mode, green otherwise. Second, you won't see a cursor!
 
@@ -342,65 +342,6 @@ Here we've taken the components of the previous print statement and expressed th
 **Exercise.** This one's a little harder.  Assign your first name as a string to the variable `firstname` and your last name to the variable `lastname`.  Use them to construct a new variable equal to your first name, a space, then your last name.  *Hint:*  Think about how you would express a space as a string.
 
 **Exercise.** Set `s = 'string'`.  What is `s + s`?  `2*s`?  `s*2`?  What is the logic here?
-
-<!--
-u and r in string literals
-https://stackoverflow.com/questions/2081640/what-exactly-do-u-and-r-string-flags-do-in-python-and-what-are-raw-string-l
-https://en.wikipedia.org/wiki/String_literal
--->
-
-
-## Structuring code within Jupyter
-
-Lets take a quick step back and discuss how to **use** Jupyter to create effective, readable code. Often we are writing much longer programs. In this case it would be silly to have every single cell be composed of just one line. Why? Lots of reasons, but the most important reasons is that that reading the code AND understanding it's context within the whole program would be very hard to do. **And readable code is something that we should aspire to.**
-
-OK. What should I do? Use a code cell for a certain task. For example, one code cell is dedicated to reading in the data. Another code cell performs one manipulation of the data (which could take multiple lines of code), another code cell performs a different manipulation, and then another is dedicated to plotting a figure. So each code cell is accomplishing a specific task at hand.
-
-Why not put everything in one code cell? Again, this is problematic regarding readability. Second, chopping up the code into different cells is good for debugging. For example, you may have aspects of your code that works, but other parts are having problems, which happens sometimes. So rather than running the whole program over and over again to debug only a subset, you have that subset of code in its own cell and then work on that on its own.
-
-Let's give it a try.  Type these commands into **one** code cell:
-
-```python
-a = 'some'
-b = 'thing'
-c = a + b
-print('c =', c)
-```
-When we run the code, we see that the first three lines produce no output.  The last one produces the output `c = something`. What we have now is one code cell performing one distinct task.  
-
-## Using Markdown to facilitate readability
-
-One of the nice features of Jupyter is that it can mix nicely formatted text via Markdown with code. This allows you to describe, at a high-level the steps that your analysis is walking through. The "high-level" aspect of this is nice in that you can structure your notebook where, say your Manager, can follow your steps without having to delve deep into the details of the code. Moreover, this allows us to "tell the story" when working with data.
-
-For example, in the cell above the code discussed above, you could insert a cell saying something to the effect:
-```Markdown
-# Creating a word by addition
-Here is an example where I am using the addition function on strings to create the word something
-```
-
-**Exercise.** Do this. Remind yourself how to create a markdown cell and insert the markdown code above the "something" code cell.
-
-## Add comments to your code
-
-We also want to mechanically explain what individual lines of code our doing. One of the rules of good code is that **we explain what we've done---in the code**.  Think about this aspect as writing and explaining code that one of our classmates can understand without help. These explanations are referred to as comments.
-
-Add a comment with the hash character (#).  Anything in a line after a hash is a comment, meaning it's ignored by Python.  Here are some examples:
-
-```python
-# everything that appears after this symbol (in the same line) is a comment!
-# comments help PEOPLE understand the code, but PYTHON ignores them!
-# we're going to add 4 and 5
-4 + 5           # here we're doing it
-print(4+5)      # here we're printing it
-```
-
-We often put comments like this in our code.  Not quite this basic, but close. One of the unwritten "laws of nature" in programming is that code is read much more often than it is written. See these links...they're awesome:
-[1](http://docs.python-guide.org/en/latest/writing/style/) [2](https://blogs.msdn.microsoft.com/oldnewthing/20070406-00/?p=27343) [3](https://blog.codinghorror.com/when-understanding-means-rewriting/).
-
-Writing informative comments will not only lead to others thanking you for saving them time, but you will find that you thank yourself very frequently.
-
-**Exercise moving forward.** Practice writing comments **all the time**. Whenever you learn something new, write a comment explaining it in your code. It feels tedious, but the best coders always explain their work. It's a good habit to develop.
-
 
 ## Single, double, and triple quotes
 
@@ -728,11 +669,11 @@ print(y)
 **Exercise (challenging).**  This one is tricky, but it came up in some work we were doing.  Suppose `year` is a string containing the year of a particular piece of data; for example, `year = '2015'`.  How would we construct a string for the following year?  *Hint:*  Start by converting year to an integer.
 
 
-## Programming Errors 
+## Programming Errors
 
-Fact of life: **you will make errors.** Manny errors. The key to programming is (i) not getting discouraged and living with that fact and (ii) learning how to make sense of error messages and **self-correct** those errors. 
+Fact of life: **you will make errors.** Manny errors. The key to programming is (i) not getting discouraged and living with that fact and (ii) learning how to make sense of error messages and **self-correct** those errors.
 
-Point (i) is a life skill that takes years to learn. However, we can help you with (ii), below we talk through some very common error messages and how to identify them. 
+Point (i) is a life skill that takes years to learn. However, we can help you with (ii), below we talk through some very common error messages and how to identify them.
 
 **Name Error.**  It happens when we use something not defined, it could be a variable or a function. The associated output is an error message that includes (i) what line the issue is occuring in and (ii) the name that could not be found. Here are two examples:
 
@@ -740,14 +681,14 @@ Point (i) is a life skill that takes years to learn. However, we can help you wi
 # Using not defined variable
 print(NotDefined)
 
-# Or another situation, here we are 
+# Or another situation, here we are
 # using function that is not defined.
 
 log(3)
 ```
-Run the code and then you see in both of these instances that there is an arrow pointing to the line within each code cell.  In the first instance it is pointing to line 2.  This is where the issue is. In the second instance, it is pointing to line number 3. 
+Run the code and then you see in both of these instances that there is an arrow pointing to the line within each code cell.  In the first instance it is pointing to line 2.  This is where the issue is. In the second instance, it is pointing to line number 3.
 
-And after pointing to the issue, below that is says ``NameError:`` and stuff. In the first instance, it tells us `NotDefined` is not defined. In the second instance, its saying the same thing. It just does not know what "log" is. 
+And after pointing to the issue, below that is says ``NameError:`` and stuff. In the first instance, it tells us `NotDefined` is not defined. In the second instance, its saying the same thing. It just does not know what "log" is.
 
 **Type Error.**  This one happens all the time too.  It happens when an inappropriate operation or function is applied to that specific data type. Here are some examples:
 ```python
@@ -766,9 +707,9 @@ tuple_error[0]=5
 ```
 There is a ``TypeError`` problem.  And what is the specific issue, well the tuple object does not support this kind of operation.
 
-**Important**  A lot of the problams in interperting the error message lies in deciphering the cryptic messages like "'tuple' object does not support item assignment" So how do we do this.  **Use google.**  Often the first result will be a question posted to [www.stackoverflow.com](www.stackoverflow.com) which is a place for programers to ask and answer questions. This is a good place to be comfortable with and seek help from. 
+**Important**  A lot of the problams in interperting the error message lies in deciphering the cryptic messages like "'tuple' object does not support item assignment" So how do we do this.  **Use google.**  Often the first result will be a question posted to [www.stackoverflow.com](www.stackoverflow.com) which is a place for programers to ask and answer questions. This is a good place to be comfortable with and seek help from.
 
-**Excercise.**  In the google search area type "tuple' object does not support item assignment" What did you find? 
+**Excercise.**  In the google search area type "tuple' object does not support item assignment" What did you find?
 
 
 **Invalid Syntax.**  Syntax errors can be detected before your program begins to run.  These types of errors are usually typing mistakes (fat fingers), but migth be hard to find out at first.  Here we give two examples:
@@ -840,21 +781,21 @@ str(len(3.1416))
     * Number types:  integers vs. floats.  Examples of integers include -1, 2, 5, 42.  They cannot involve fractions.  Floats use decimal points: 12.34. Thus 2 is an integer and 2.0 is a float.
     * Dictionary.  Dictionaries are collections of unordered things in `{}` with key-value pairs: names = {'Dave': 'Backus', 'Chase': 'Coleman'}.
 
-    
-* **Built-in functions**: 
+
+* **Built-in functions**:
     * The `print()` function.  Use `print('something', x)` to display the `value(s)` of the `object(s)` in parentheses.
     * The `type()` function.  The command `type(x)` tells us what kind of object x is.  Past examples include integers, floating point numbers, strings, and lists.
-    
-* **Type conversions**: 
-    * Use `str()` to convert a float or integer to a string. 
-    * Use `float()` or `int()` to convert a string into a float or integer. 
+
+* **Type conversions**:
+    * Use `str()` to convert a float or integer to a string.
+    * Use `float()` or `int()` to convert a string into a float or integer.
     * Use `list()` to convert a string to a list of its characters.
 
 * **Error message types**:
     * NameError.  Usually happens when using something not defined which could be variable or methods.
     * TypeError.  Raise when an operation or function is applied to an object of inappropriate type.  For example, tuples have no `"="` methods while number no `len`.   
     * Invalid syntax.  Syntax errors can be detected before your program begins to run. So first thing to do is to check typos, parentheses, etc.
-    * KeyError.  It happens when you refer a key not previously defined in the dictionary. 
+    * KeyError.  It happens when you refer a key not previously defined in the dictionary.
 
 **Useful Tricks and Programming Tools**
 
