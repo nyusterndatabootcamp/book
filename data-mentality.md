@@ -58,7 +58,9 @@ We're looking for a topic that satisfies two conditions: (1) we find it interest
 * **Start with data.**  Take a dataset you find interesting, ask what you might do with it.  If you're not sure where to look, try our list of [data sources](http://nyu.data-bootcamp.com/data/
 ).
 
-* **Start with an example.**  Find an analyst report, blog post, or graphic you like.  Ask where the data comes from and think about whether you can replicate and/or extend it. An objection I often hear about this approach from students is "its not original and..." lots of rubbish after this. One of the best ways to learn about something is to replicate what others have done before you. And guess what? This often process leads you to your own, original, interesting question.  
+* **Start with an example.**  Find an analyst report, blog post, or graphic you like.  Ask where the data comes from and think about whether you can replicate and/or extend it. An objection I often hear about this approach from students is "its not original and..." lots of rubbish after this. One of the best ways to learn about something is to replicate what others have done before you. And guess what? This often process leads you to your own, original, interesting question.
+
+* **Work backwards.** Think about a graphic, table, result that you would want to see. Once you determine your *want*, work backwards by asking what data would I need to show that, what question does that want answer. And then fill-in the details. Tom Sargent likes to call this the "want operator." Pro Tip: This works well in life in general.
 
 If you're not sure how this works, watch Steve Levitt's [video](https://youtu.be/r5jATFtKtI8?t=5m10s) about working with company data. It's an entertaining and informative 50 minutes. Note specifically how he comes up with ideas for using the data he's given.
 
@@ -88,3 +90,5 @@ We mean this in a good way, but in our experience there are a number of things s
 Projects are less structured than most things you'll run across in school.  It's challenging, at first, to work with so little structure, but most students find that the freedom to develop their own projects is one of the most rewarding things they can do.
 
 **Exercise.**  Write down three project ideas.  Don't overthink this, one or two lines each will do.
+
+**Exercise.**  For each idea, think about a graphic that you would like to create/see. What would it look like. What kind of data would you need to create that graphic. 
