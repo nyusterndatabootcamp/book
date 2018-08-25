@@ -542,62 +542,17 @@ The return is an essential component of many functions.  Typically when we read 
 
 **Exercise (challenging).**  Create and test a function that takes a string year (say, `'2015'`) and returns a string of the next year (say, `'2016'`).
 
-
-<!--
-## Assignments and copies
-
-Also mytn, but file away the idea for later.  This is what programmers call a "[gotcha][8]," an unexpected or counterintuitive feature of a language.  This one has gotten all of us at one time or other.  It shows up in the Pandas package, too.  The idea is that if we have (say) a list `x` and set `y = x`, then `y` is attached to `x`.  If we change the components of `x`, then `y` changes along with it.
-
-[8]: https://en.wikipedia.org/wiki/Gotcha_(programming)
-
-
-Python's behavior is similar in this respect to a spreadsheet.  Suppose we put the number 7 in cell A1, then set A2 = A1*10.  We would hope to see the number 70 in A2.  But if we change A1 to 5, then A2 would change to 50 along with it.
-
-
-We illustrate the issue with an example adapted from [Stack Overflow](http://stackoverflow.com/a/10844760/804513):
-
-```python
-x = [1,2,3]
-y = x
-y[0] = 'WHOA!'
-print(x)
-```
-
-The output is `['WHOA!', 2, 3]`.  You see what's happened?  We changed the first value of `y`, but when we print `x` we realized it changed, too.  It works the other way, too.  If we change `y`, `x` changes with it:
-
-```python
-y[2] = 'xyzzy'
-print(x)
-```
-
-Here we get the output:  `['WHOA!', 2, 'xyzzy']`.
-
-So that's how it works.  But suppose we want an independent copy of `x`, not simply a different label for it.  what do we do?  The answer is to produce a copy:
-
-```python
-x = [1,2,3]
-y = x.copy()
-x[0] = 'WHOA!'
-print(y)
-```
-
-Here `y` hasn't changed, it's not connected to `x`.
--->
-
 ## Objects
 
-This is a key component of python, which is an [object oriented programming language](https://en.wikipedia.org/wiki/Object-oriented_programming). What does that mean? For us this means that every thing is really an object with associated **methods** and **attributes**. A method is like a function that already togo with the given object. Methods in python are always completed with `()` . Attributes are go-to-go attributes about the object that can be accessed easily. What this means is that there are simple built-in ways to get information and perform operations on objects without having to write our on functions. A typical example is the `dict()` object and we have learned how to retrive its keys and values, etc. We will learn more about `list()` objects in this section.
-
-<!--
-	(Experts might say at this point:  an object is an "instance" of a "class."  Ignore them.)
--->
+This is a key component of python, which is an [object oriented programming language](https://en.wikipedia.org/wiki/Object-oriented_programming). What does that mean? For us this means that every thing is really an object with associated **methods** and **attributes**. A method is like a function that already togo with the given object. Methods in python are always completed with `()` . Attributes are go-to-go attributes about the object that can be accessed easily. What this means is that there are simple built-in ways to get information and perform operations on objects without having to write our on functions. A typical example is the `dict()` object which has methods to grab its keys and values, etc.
 
 Functions and methods differ primarily in their syntax:
 
 * Syntax of a **function**: `function(object)`
-* Syntax of a **method**: `object.method`
+* Syntax of a **method**: `object.method()`
+* Syntax of a **attribute**: `object.attribute`
 
-We used the former in the previous section and consider the latter here.
+We used the former in the previous section and consider the latter two here.
 
 What methods are available to work with a given object?  Take, for example, the list `numberlist = [1, 5, -3]`.  To get the list of available methods, type in a code cell:
 
@@ -632,9 +587,7 @@ print(numberlist)
 
 That's another way to get information about a method: try it and see what happens.
 
-
-**Digression.**  We're trying to keep this simple, but we also want it to be accurate, so let us be more careful with the term **method**.  Needless to say, this is **mtwn**.  Tab completion gives us a list of two things:  *attributes* (properties of the object) and *methods* (essentially functions with different syntax).  The distinction isn't important to us, although we can tell a method because it comes with parentheses `()` (just like functions).
-
+**Digression.**  We're trying to keep this simple, but we also want it to be accurate. Tab completion gives us a list of two things:  *attributes* (properties of the object) and *methods* (essentially functions with different syntax).  The distinction isn't important to us, although a method requires the use of parentheses `()` (just like functions); attributes do not. How to tell which is which...some of our teams approach is to try both and see what happens.
 
 **Example.** Set `firstname = 'Chase'`.  The method `lower` converts it to lower case.  If we type `firstname.lower` into the object inspector, we see that it comes with parentheses for additional inputs.  So we type `firstname.lower()` into a code cell.  The response is `'chase'`.  The parentheses are there to provide additional inputs -- arguments, we call them.  Without the parentheses, it doesn't work.
 
