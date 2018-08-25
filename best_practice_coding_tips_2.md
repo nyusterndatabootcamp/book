@@ -62,7 +62,7 @@ Why should we do this... big picture is that its about readability and debugging
 One final point from Google "Prefer small and focused functions." If it is long, think about whether it can be broken up without harming the structure of the program. The point here is that keeping your functions short and simple makes it easier for other people to read and modify your code.
 
 
-###  Naming
+### Use descriptive names
 
 From the Google guide "Function names, variable names, and filenames should be descriptive; eschew abbreviation. In particular, do not use abbreviations that are ambiguous or unfamiliar to readers outside your project, and do not abbreviate by deleting letters within a word."
 
