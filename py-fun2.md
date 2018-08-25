@@ -11,8 +11,7 @@
 
 ---
 
-
-We continue our overview of Python's core language, which lays a foundation for the rest of the course.  We go through the material quickly, since we're more interested in the general ideas than the details.  You will feel like you're drinking from a fire hose, but it will sink in if you **stick with it**.
+We continue our overview of Python's core language, which lays a foundation for the rest of the course.  We go through the material quickly, since we're more interested in the general ideas than the details.  You will feel like you're drinking from a fire hose, but it will sink in if you **stick with it!**
 
 
 ## Reminders
@@ -21,15 +20,15 @@ Some things from previous chapters that we'll use a lot:
 
 * Assignments and variables.  We say we assign what's on the right to the thing on the left:  `x = 17.4` assigns the number `17.4` to the variable `x`.
 
+* Help.  We can get help for a function or method `foo` by typing `foo?` in the IPython console or `foo` in the Object explorer.  Try each of them with the `type()` function to remind yourself how this works.
+
 * Data types and structures, e.g., **Number types: integers vs. floats**, **lists**, **strings**, and **dictionaries**, etc.  
 
 * Built-in functions, such as `print()`, `type()` and `len()`. In particular, we learned several type conversions functions. For example, use `str()` to convert a float or integer to a string. Use `float()` or `int()` to convert a string into a float or integer.  Use `list()` to convert a string to a list of its characters.
 
-* Comments. Use the hash symbol `#` to add comments to your code and explain what you’re doing.
-
 * Error Messages. Have covered 4 common mistakes: **NameError**, **TypeError**, **Invalid syntax** and **KeyError**. Be familiar with them.
 
-* Help.  We can get help for a function or method `foo` by typing `foo?` in the IPython console or `foo` in the Object explorer.  Try each of them with the `type()` function to remind yourself how this works.
+* Comments. Use the hash symbol `#` to add comments to your code and explain what you’re doing.
 
 And while we're reviewing:  Start Jupyter, open a new file, and save as `bootcamp_class_pyfun2.py` in your `Data_Bootcamp` directory/folder.
 
@@ -106,25 +105,19 @@ print(check)
 
 Run it and see if you're right.  What type of variable is `check`?  What is its value?  Is Chase greater than Spencer?
 
+What did you find? The answer probably is a bit puzzling -- it was to us at first. But we used our "google fu" to figure out what as going on and we found this...
 
-<!--
-**Multiple comparisons.**  This is mtwn, but file away for later the idea that we can string together two or more comparisons with the words `and` and `or`.  We'll do something similar when we work with data, but the syntax is a little different.
+https://stackoverflow.com/questions/4806911/string-comparison-technique-used-by-python
 
-Consider the code
+Here is the quick run down, python compares strings in lexicographic ordering. OK...what does that mean? This means the following: First the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted.
 
-```python
-x = 2/3
-conditiona = x >= 0
-conditionb = x <= 5
-test1 = conditiona and conditionb
-test2 = conditiona or conditionb
-```
+What determines the order? In this case note that "S" comes later in the alphabet than "C" thus is has a larger "value", thus "Chase > Spencer" is false.
 
-What are the values of `test1` and `test2`?  The expression `conditiona and conditionb` is true if both conditions are true, false otherwise.  The expression `conditiona or conditionb` is true if either one of the conditions is true. -->
+When comparing uppercase vs. lower case, uppercase come before lower case, stuff like ``*&`` come before. How do I know exactly what is going on... here is a link to the unicode point ordering:
 
+https://en.wikipedia.org/wiki/List_of_Unicode_characters
 
-<!--**Warning from the future.** We use multiple comparisons most often in Pandas, Python's data management package.  For reasons we won't go into, Pandas uses different syntax:  `&` replaces `and `and `|` replaces `or`.  -->
-
+And scroll down to the Latin Script /Basic Latin table there. There is a number for each possible character. To see the number just type ``ord("z")`` and note how this should give back the value 122 and then look in the table it should have the value 122. In the comparison above, what it is doing is taking the number in this table for the given character and then comparing it to the number for the other character.
 
 ## Conditionals (`if` and `else`)
 
@@ -217,8 +210,6 @@ We can do the same thing with lists, but the items here are the elements of a li
 
 **Exercise.** Take the list `numberlist = [1, 5, -3]`.  Use slicing to set a variable `first` equal to the first item.  Set another variable `last` equal to the last item.  Set a third variable named `middle` equal to the middle item.
 
-
-## More slicing
 
 We've seen how to "slice" (extract) an item from a string or list.  Here we'll show how to slice a range of items. For example, slice the last five characters from the string `c = 'something'`.
 
@@ -353,7 +344,7 @@ for letter in word:
 
 We now know how loops work.  Here's another version in which we loop over something a fixed number of times. For example, we might want to sum or average the values of a variable.  Or value a bond with a fixed number of coupon payments.  Or something.
 
-The new ingredient is the `range()` function. `range(n)` gives us all the integers (whole numbers) from `0` to `n-1`.  (If that sounds strange, remind yourself how slicing works.)  And `range(n1, n2)` gives us all the whole numbers from `n1` to `n2-1`.  We can use it in lots of ways, but loops are a prime example. 
+The new ingredient is the `range()` function. `range(n)` gives us all the integers (whole numbers) from `0` to `n-1`.  (If that sounds strange, remind yourself how slicing works.)  And `range(n1, n2)` gives us all the whole numbers from `n1` to `n2-1`.  We can use it in lots of ways, but loops are a prime example.
 
 Some examples illustrate how this works:
 
@@ -595,7 +586,7 @@ Here `y` hasn't changed, it's not connected to `x`.
 
 ## Objects
 
-This is a key component of python, which is an [object oriented programming language](https://en.wikipedia.org/wiki/Object-oriented_programming). What does that mean? For us this means that every thing is really an object with associated **methods** and **attributes**. A method is like a function that already togo with the given object. Methods in python are always completed with `()` . Attributes are go-to-go attributes about the object that can be accessed easily. What this means is that there are simple built-in ways to get information and perform operations on objects without having to write our on functions. A typical example is the `dict()` object and we have learned how to retrive its keys and values, etc. We will learn more about `list()` objects in this section. 
+This is a key component of python, which is an [object oriented programming language](https://en.wikipedia.org/wiki/Object-oriented_programming). What does that mean? For us this means that every thing is really an object with associated **methods** and **attributes**. A method is like a function that already togo with the given object. Methods in python are always completed with `()` . Attributes are go-to-go attributes about the object that can be accessed easily. What this means is that there are simple built-in ways to get information and perform operations on objects without having to write our on functions. A typical example is the `dict()` object and we have learned how to retrive its keys and values, etc. We will learn more about `list()` objects in this section.
 
 <!--
 	(Experts might say at this point:  an object is an "instance" of a "class."  Ignore them.)
@@ -664,32 +655,7 @@ firstlast = firstname + ' ' + lastname
 
 Find a method to replace the n's in `firstlast` with asterisks.
 
-
-## Programming style
-
-Yes, style counts.  We're not only trying to get something done, we're also communicating with others who may look at our code and possibly use it.  A clear style makes that communication more effective.
-
-With that in mind, here are some guidelines we've found useful:
-
-* Put an overall summary of your program at the top in triple quotes.  This should include both the purpose of the program and your name.  Your email address is optional.
-* Lines should be no longer than 79 characters.
-* Skip two lines before and after a function definition.
-* Skip lines here and there where you think it makes sense.
-* Use comments whenever something isn't immediately obvious (and sometimes even when it is).
-
-You can find more along these lines in the classic "[PEP8](https://www.python.org/dev/peps/pep-0008/)" and Google's [style guide](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html).
-
-Some programmers are religious about this.  We'd say simply that we want to make our code readable by others.
-
-There's one other thing we often do.  If we find documentation online -- at Stack Overflow, for example -- we put  a link to it in the code for future reference.
-
-<!--
-\url{http://www.reddit.com/r/Python/comments/3639nl/what_is_the_most_beautiful_piece_of_python_code/}
-\url{https://github.com/mitsuhiko/werkzeug/blob/master/werkzeug/routing.py}
-
-https://github.com/amontalenti/elements-of-python-style
--->
-
+---
 
 ## Review Questions
 
@@ -746,17 +712,19 @@ https://github.com/amontalenti/elements-of-python-style
 
 ## Summary
 
-* **Boolean variable and its operations**: We conduct the comparsion operation on the right: x = 3 > 2, and we can assign the boolean values (True or False) to the variable x. We also learned how to compare two strings.
+* **Boolean variable and its operations**: We conduct the comparison operation on the right: x = 3 > 2, and we can assign the boolean values (True or False) to the variable x. We also learned how to compare two strings.
+
 * **"if" conditional statement**: it allows us to do different things depending on the result of a comparison or Boolean variable.
+
 * **Slicing**: we learn **Forward** and **Backward** counting conventions in a list, do you know when to select which? We also cover using **`:`** operator to select groups of data.
 
 * **"for" Loop**:
     * We can use `for` to loop through any iterable objects.
     * We talk a common built-in iterable object/data sturcture: `range` to help us with the data slicing/indexing.
 
-* **Functions**: we learn how to define and use customized functions. 
+* **Functions**: we learn how to define and use customized functions.
 
-* **Objects**: a core concept in a object oriented programming language like python. It can help us understand how we can use **`.`** operations (**tab completion**) to call methods and attributes in an object. 
+* **Objects**: a core concept in a object oriented programming language like python. It can help us understand how we can use **`.`** operations (**tab completion**) to call methods and attributes in an object.
 
 
 ## Resources
@@ -766,8 +734,11 @@ See the resources in the previous chapter, especially [Codecademy](https://www.c
 Additional resources:
 
 * The official [Python Tutorial](https://docs.python.org/3.4/tutorial/controlflow.html) has a nice introduction to "control flow language" that includes comparisons, conditional statements, and loops.
+
 * [CodingBat](http://codingbat.com/python) has a great collection of exercises.  Significantly more demanding than ours.  Runs online.
+
 * Udacity has a free [Introduction to Computer Science](https://www.udacity.com/courses/cs101) course that covers Python from a more technical perspective.  Recommended for people who want to understand the structure and logic of the language.
+
 * This is way [more about comprehensions](https://gist.github.com/bearfrieze/a746c6f12d8bada03589) than you ever wanted to know, but it's so beautifully done you might want to take a look.
 
 One last one, but only if you're curious about floating point numbers.  Ok, that's approximately no one.  Try this anyway and think about what's going on (it also gives us an idea that we don't want to check for strict equality for floating point numbers -- Better to check whether they are close enough):
@@ -777,7 +748,3 @@ One last one, but only if you're curious about floating point numbers.  Ok, that
 ```
 
 False?  More [here](http://blog.reverberate.org/2016/02/06/floating-point-demystified-part2.html).
-
-<!--
-http://squishythinking.com/2014/02/22/bisecting-floats/
--->
