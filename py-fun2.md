@@ -444,7 +444,7 @@ Let's review:
 
 ## List comprehensions
 
-That's a mouthful of jargon, but the idea is that we can create lists (and do related things) using implicit loops that we refer to as **list comprehensions**.  This is incredibly useful and shows up a lot in Python code.
+That's a mouthful of jargon, but the idea is that we can create lists (and do related things) using implicit loops that we refer to as **list comprehensions**.  "Implicit loops" essentially means that they are doing the same thing as a loop, but that the syntax is more compact.  This shows up a lot in Python code.
 
 **Example.** Consider the loop above that prints out the elements of the list `namelist` one at a time:
 
@@ -480,6 +480,8 @@ fruit6 = [item for item in fruit if len(item)<=6]
 
 
 **Exercise.** Take the list of growth rates `g = [0.02, 0.07, 0.07]`.  Write a list comprehension that multiplies each element by 100 to turn it into a percentage.
+
+Final point about this: List comprehensions are nice to use for simple cases. However, for more complicated situations, comprehensions be very hard to read and understand. Hence, a traditional ``for`` loop would be more appropriate. 
 
 
 ## Defining our own functions
