@@ -11,7 +11,7 @@ Yes, style counts.  We're not only trying to get something done, we're also comm
 
 Here are two resources with specific style guides. There is the classic "[PEP8](https://www.python.org/dev/peps/pep-0008/)" and Google's [style guide](https://github.com/google/styleguide/blob/gh-pages/pyguide.md) for python. We took the liberty to pull some lessons from these guides for you to keep in mind.
 
-## Put an overall summary of your program at the top.
+### Put an overall summary of your program at the top.
 
 In a Jupyter notebook, just create a markdown cell and describe what it does and your name (so we have someone to blame!). In a ``.py`` file, do it all in triple quotes.  
 
@@ -25,7 +25,7 @@ def squareme(number):
 ```
 
 
-## Lines should be no longer than 79 characters.
+###  Lines should be no longer than 79 characters.
 
 Yes, we are fortunate to be endowed with large monitors. This does not mean that we should have one line of code that spans all 30 inches. Why, this is about readability and short one line statements are easy to read.
 
@@ -39,7 +39,7 @@ How do I know how many are 79 characters. Good question. First, traditional IDEs
 
 There are times when to break the rules. Like in life, you will know it when you see it.
 
-## Spacing
+### Use spacing to facilitate readability
 
 Here are some spacing rules that we like...
 
@@ -47,7 +47,7 @@ Here are some spacing rules that we like...
 
 * Skip lines here and there where you think it makes sense.
 
-## Use functions for repetitive tasks
+### Use functions for repetitive tasks
 
 Often you will have to perform some task repeatedly. For these repeat tasks create a function that can perform them. For example, we may have to square a number many, many times. Solution: create a function that squares numbers.
 
@@ -62,10 +62,10 @@ Why should we do this... big picture is that its about readability and debugging
 One final point from Google "Prefer small and focused functions." If it is long, think about whether it can be broken up without harming the structure of the program. The point here is that keeping your functions short and simple makes it easier for other people to read and modify your code.
 
 
-## Naming
+###  Naming
 
 From the Google guide "Function names, variable names, and filenames should be descriptive; eschew abbreviation. In particular, do not use abbreviations that are ambiguous or unfamiliar to readers outside your project, and do not abbreviate by deleting letters within a word."
 
-## BE CONSISTENT
+###  BE CONSISTENT
 
 Don't do random stuff. Pick a style and stick with it. When you name functions, files, etc. pick a naming style and stick to it. When using white space, pick your preferred method and stick to it. You get the idea. When you are handed code, take a few minutes to look at the code around you and determine its style and follow it. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
