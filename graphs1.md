@@ -1,11 +1,11 @@
 # Python graphics: Matplotlib fundamentals
 
 ---
-**Overview.**  We introduce and apply Python's popular graphics package, Matplotlib.  We produce line plots, bar charts, scatterplots, and more.  We do all this in Jupyter using a Jupyter notebook.
+**Overview.**  We introduce and apply Python's popular graphics package, Matplotlib.  We produce line plots, bar charts, scatterplots, and more.  We do all this in Jupyter using a single notebook.
 
-**Python tools.**  Jupyter notebooks.  Graphing with Matplotlib: dataframe plot methods, the `plot(x,y)` function, figure and axis objects.
+**Python tools.**  Graphing with Matplotlib: dataframe plot methods, figure and axis objects.
 
-**Buzzwords.** Data visualization, Jupyter notebook
+**Buzzwords.**  Data visualization
 
 **Applications.**  US GDP, GDP per capita and life expectancy, Fama-French asset returns, PISA math scores.
 
@@ -41,96 +41,6 @@ One more thing before we start:  **Save the Jupyter notebook** at the Code link 
 
 * Reading spreadsheets.  We "read" spreadsheet data into Python with the `read_csv()` and `read_excel()` functions in Pandas.
 
-* Jupyter.  A Python environment in which we create notebooks.  These notebooks combine Python code with text and output, including graphics. It's the ideal medium for this topic.
-
-
-## Jupyter notebooks
-
-We're going to change programming environments from Spyder to **Jupyter** and work with **Jupyter notebooks**. We had a brief introduction with Jupyter when we installed Anaconda, but we'll go through it again to make sure we're all on the same page.
-
-We can open a new Jupyter notebook by tracing the steps we took in the first class:
-
-* Open your terminal (command prompt on Windows)
-* Type `jupyter notebook` and press enter.  This will open a tab in your browser with the word Jupyter at the top and your computer's directory structure below it.
-* In the browser tab, navigate to your `Data_Bootcamp` directory/folder.
-* Click on the New button in the upper right and choose `Python 3` (it may also refer to this as `Python[Root]`.
-
-We now have an empty Jupyter notebook we play with.
-
-**Jupyter essentials.**  In your browser, you should have an empty notebook with the word Jupyter at the top.  Below it is a **menubar** with the words File, Edit, View, Cell, Kernel, and Help.  Below that is a **toolbar** with various buttons.  You can see all of these components here:
-
-![Jupyter environment](figs/jupyter_notebook.png "Jupyter")
-
-If you have a few minutes, click on Help in the menubar and choose User Interface Tour.
-
-Let's put some of these tools to work:
-
-* Change the notebook name.  Click on the name (`Untitled` if we just created a new notebook) to the right of the word Jupyter at the top. A textbox should open up.  Use it to change the name to `bootcamp_sandbox`.
-
-* Toolbar buttons.  Let your mouse hover over one of them to see what it does.
-
-* Add a cell.  Click on the `+` in the toolbar to create a new cell.  Choose Code in the toolbar's dropdown menu.  Type this code in the cell:
-
-  ```python
-  import datetime as dt
-  print('Welcome to Data Bootcamp!')
-  print('Today is: ', dt.date.today())
-  ```
-
-  Now click on Cell in the menubar and choose Run cell.  You should see the welcome message and today's date below the code.
-
-* Add another cell.  Click on the `+` to create another cell and choose Markdown in the toolbar's dropdown menu. Markdown is text; more on it shortly.  Type this in the cell:
-
-  ```
-  Your name
-  Data Bootcamp sandbox for playing around with Jupyter notebooks
-  ```
-
-  Run this cell as well.
-
-You get the idea.  To get a sense of what's possible, take a look at these two notebooks [1](https://github.com/NYUDataBootcamp/Materials/blob/master/Code/notebooks/bootcamp_test.ipynb) [2](http://nbviewer.ipython.org/github/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb).
-
-**More than you need** In addition to the buttons near the top of your notebook, there are also keyboard shortcuts for all these commands. We'll tell you about them along the way. Once we got used to them, we found that the keyboard shortcuts are an easier and more efficient way to do what we need. These will always be noted with **mtyn**. The command for creating a new cell is to press escape to be in *command mode* and then press `a` to insert a new cell above the current one and `b` to insert a new cell below the current cell.
-
-**Markdown essentials.**  Markdown is a simplified version of html ("hypertext markup language"), the language used to construct basic websites.  html was a great thing in 1995, but now that the excitement has worn off we find it painful.  Markdown, however, has a zen-like simplicity and beauty.  Here are some things we can do with it:
-
-* Headings.  Large bold headings are marked by hashes (`#`).  One hash for first level (very large), two for second level (a little smaller), three for third level (smaller still), four for fourth (the smallest).  Try these in a Markdown cell to see how they look:
-
-   ```
-   # Data Bootcamp sandbox
-   ## Data Bootcamp sandbox
-   ### Data Bootcamp sandbox
-   ```
-
-  Be sure to run the cell when you're done (`shift enter`).
-
-* Bold and italics.  If we put a word or phrase between double asterisks, it's displayed in bold.  Thus `**bold**` displays as **bold**.  If we use single asterisks, we get italics:  `*italics*` displays as *italics*.
-
-* Bullet lists.  If we want a list of items marked by bullets, we start with a blank line and mark each item with an asterisk on a new line:
-
-  ```markdown
-  * something
-  * something else
-  ```
-
-  Try it and see.
-
-* Links.   We construct a link with the text in square brackets and the url in parentheses immediately afterwards.  Try this one:
-
-  ```
-  [Data Bootcamp course](http://nyu.data-bootcamp.com/)
-  ```
-
-We can find more information about Markdown under Help.  Or use your Google fu.  We like the [Daring Fireball](https://daringfireball.net/projects/markdown/) description.
-
-
-Markdown is ubiquitous.  This book, for example, is written in Markdown.  Look [here](https://github.com/NYUDataBootcamp/Book) for a list of chapter files.  Click on one to see how it displays.  Click on the Raw button at the top to see the Markdown file that produced it.
-
-**Jupyter help.** We can access documentation just as we did in Spyder's IPython console:  Type a function or method, add a question mark, and run the cell (`shift enter`).  For example:  `print?` or `df.plot?`.
-
-**Exercise.** Create a description cell in Markdown at the top of your notebook.  It should include your name and a description of what you're doing in the notebook.  For example: "Joan Watson's notes on the Data Bootcamp Matplotlib notebook" and a date.  *Bonus points:*  Add a link.
-
-**Exercise.**  Add two new cells.  In the first one, add the statement `import pandas as pd`, labelled as code.  Run it.  Use the second cell to find documentation for `pd.read_csv`.
 
 ## Getting ready
 
@@ -222,13 +132,12 @@ Before charging ahead, let's review how we would create what Excel calls a "char
 This might be followed by a long list of fine-tuning:  what the lines look like, how the axes are labeled, and so on.  We'll see the same in Matplotlib.
 
 
-## Three approaches to graphics in Matplotlib
+## Two approaches to graphics in Matplotlib
 
 Back to  graphics.  Python's leading graphics package is **Matplotlib**.  Matplotlib can be used in a number of different ways:
 
 * Approach #1:  Apply plot methods to dataframes.
-* Approach #2:  Use the `plot(x,y)` function to plot `y` against `x`.
-* Approach #3:  Create figure objects and apply methods to them.
+* Approach #2:  Create figure objects and apply methods to them.
 
 They call on similar functionality, but use different syntax to get it.
 
@@ -303,63 +212,9 @@ It produces separate histograms of the two variables with 20 "bins" in each, as 
 **Exercise.**  Use the World Bank dataframe `wbdf` to create a bar chart of GDP per capita, the variable `'gdppc'`. *Bonus points:* Create a horizontal bar chart. Which do you prefer?
 
 
-## Approach #2:  `plot(x,y)`
-
-Next up:  the popular `plot(x,y)` function from the pyplot module of Matplotlib.  We never use this and will go over it at high speed -- or perhaps not at all.
-
-We import the pyplot module with
-
-```python
-import matplotlib.pyplot as plt
-```
-
-This is a more explicit version of Matplotlib graphics in which we specify the `x` and `y` variables directly, much as we did earlier with a scatter plot.  A typical statement has the form
-
-```python
-plt.plot(x, y)
-```
-
-The `plt.` prefix identifies `plot()` as a pyplot function.   This produces the same kinds of figures we saw earlier, but we get there by a different route.
-
-Here are some examples. To plot GDP on its own, we use the code
-
-```python
-plt.plot(us.index, us['gdp'])
-```
-
-Remind yourself what the `x` and `y` variables are here.  With a dataframe plot method, x is automatically the index.  Here we must be explicit about it.
-
-If we want two variables in the same graph, we simply add another line:
-
-```python
-plt.plot(us.index, us['gdp'])
-plt.plot(us.index, us['pce'])
-```
-
-(In Jupyter, both of these statements must be in the same cell for the lines to show up in the same figure.)
-
-If we want a bar chart we use
-
-```python
-plt.bar(us.index, us['gdp'])
-```
-
-The bars here are off center, so we typically include the argument `align='center'`.
 
 
-**Exercise.** Experiment with
-
-```python
-plt.bar(us.index, us['gdp'],
-        align='center',
-        alpha=0.65,
-        color='red',
-        edgecolor='green')
-```
-
-Describe what each of these arguments/parameters does.
-
-## Approach #3:  Create figure objects and apply methods
+## Approach #2:  Create figure objects and apply methods
 
 This approach was mysterious to us at first, but it's now our favorite.  The idea is to generate an object -- two objects, in fact -- and apply methods to them to produce the various elements of a graph:  the data, their axes, their labels, and so on.
 
@@ -718,8 +573,6 @@ The dataframe `cals` contains the calories in 100 grams of several different foo
 
 
 ## Resources
-
-A mercifully short [markdown cheatsheet](http://commonmark.org/help/).
 
 We haven't found many non-technical resources on Matplotlib we like, but these are pretty good:
 
