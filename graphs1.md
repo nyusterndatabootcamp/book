@@ -9,7 +9,7 @@
 
 **Applications.**  US GDP, GDP per capita and life expectancy, Fama-French asset returns, PISA math scores.
 
-**Code.** [Link](https://github.com/NYUDataBootcamp/Materials/blob/master/Code/notebooks/bootcamp_graphics.ipynb).
+**Code.** [Link](https://github.com/nyusterndatabootcamp/notebooks/blob/master/book_notebooks/intro_to_matplotlib.ipynb).
 
 ---
 
