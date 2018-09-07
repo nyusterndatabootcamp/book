@@ -37,86 +37,92 @@ Now that we have this done, let's first get to know the most important data stru
 
 ### Array
 
-The `ndarray` is the primary building block of numpy. It enables us to perform mathematical computations efficiently using similar syntax to the equivalent operations for scalar elements as we learned in python fundamental notebook 1. So let's create an array object via `array` methods in `numpy`.
+The `ndarray` is the primary building block of numpy. It enables us to perform mathematical computations efficiently using similar syntax to the equivalent operations for scalar elements as we learned in python fundamental notebook 1.
 
-
-```python
-data1 = [3.4,2,7,1.4,5]
-arr1 = np.array(data1)
-
-print(arr1)
-print(arr1.dtype)
----
-
-[3.4 2.  7.  1.4 5. ]
-
-float64
-```
-
+So let's create an array object via `array` methods in `numpy`.
 
 ```python
-# Let's create an another array
-data2 = [5,2,1,3,4]
-arr2 = np.array(data2)
-```
+In [2]: data1 = [3.4,2,7,1,5]
 
+In [3]: arr1 = np.array(data1)
+
+In [4]: arr1
+Out[4]: array([3.4, 2. , 7. , 1. ])
+```
+Let's create an another array
+
+```python
+In [5]: data2 = [5,2,1,3,4]
+
+In [6]: arr2 = np.array(data2)
+```
 Now we can do some simple computations like we've done for scalars in python fundamental notebook 1.
 
-
 ```python
-arr1+arr2
----
-
-array([8.4, 4. , 8. , 4.4, 9. ])
+In [7]: arr1+arr2
+Out[7]: array([8.4, 4. , 8. , 4. , 9. ])
 ```
 
-
 ```python
-arr1*arr2
----
-
-array([17. ,  4. ,  7. ,  4.2, 20. ])
-```
-There are some basic methods associated with an ``ndarray``. One is its shape. This will be reported as the number of rows and columns if its a two dimensional array. So if it is has 5 rows and two columns, then
-This can some times give interesting results.
-
-```python
-print(arr1.shape)
----
-
-(5,)
+In [8]: arr1*arr2
+Out[8]: array([17.,  4.,  7.,  3., 20.])
 ```
 
-It seems that there is something missing after the comma. Why? Is it wrong or undefined. No, it is not wrong but will sometimes lead to unexpected results in computations, especially for operations among matrices and this type of arrays. So we recommend using the `reshape` methods in `numpy` to specify the second dimension as 1.
+Here is another example of an array. This one is composed of two lists of the same length.
 
 ```python
-arr1=arr1.reshape(5,1)
-print(arr1.shape)
+In [9]: arr4=np.array([[2,3,4],[8,5,7]])
+
+In [10]: arr4
+Out[10]:
+array([[2, 3, 4],
+       [8, 5, 7]])
 ```
+Notice what this is doing. It is effectively creating a 2 by 3 array. That is there are two rows and three columns (note how this is looking like a table or a data set). So what is happening here is that the individual list is defining a row, then however many elements within each row are the number of columns.
 
-Three more ways to initialize 1-d or 2-d arrays:
+### Array Methods
 
+Let's use one of the built in methods associated with an ``ndarray`` to explore this.  One is its `.shape`. This will be reported as the number of rows and columns if its a two dimensional array. What should we expect?
 
 ```python
-arrZeros = np.zeros((2,3)) # Initiallize an array with zeros
-arrZeros
+In [11]: arr4.shape
+Out[11]: (2, 3)
 ```
-
+So it tells us that the array is of shape two rows and three columns. **mtwn** but this is standard matrix convention, rows first then columns. We can also use built-in methods to initialize 1-d or 2-d arrays:
 
 ```python
-arrOnes = np.ones((2,2)) # Initiallize an array with ones
-arrOnes
-```
+In [12]: arrZeros = np.zeros((2,3))
 
+In [13]: arrZeros
+Out[13]:
+array([[0., 0., 0.],
+       [0., 0., 0.]])
+```
+So this is creating an array which is of shape two rows and three columns (again rows first, columns second). Below we can create an array full of ones.
 
 ```python
-arrEyes = np.eye(3)  # Initiallize an array with ones only in the diagonal
-arrEyes
+In [14]: arrOnes = np.ones((2,2))
+
+In [15]: arrOnes
+Out[15]:
+array([[1., 1.],
+       [1., 1.]])
 ```
+Here is an interesting one, it has one on only the diagonal and zeros elsewhere. This is called an identity matrix.
+
+```python
+In [16]: arrEyes = np.eye(3)
+
+In [17]: arrEyes
+Out[17]:
+array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+```
+So what it did was create a square matrix with three rows and three columns, then the ones down the diagonal.
+
 
 In fundamental notebook 2, we have learned the `range` object when using it with for loops. Here we present the `numpy` array version of it.
-
-
 ```python
 np.arange(0,10,2)
 ```
@@ -124,8 +130,6 @@ np.arange(0,10,2)
 ### Transpose an array
 
 In `numpy`, transpose an 1-d or 2-d array is super easy and fast via `.T`.
-
-
 
 ```python
 print(arrZeros.shape)
@@ -171,39 +175,20 @@ arr4
 array([[2, 3, 4], [8, 5, 7]])
 ```
 
-
-
-
-
-
-
-
-How to get number **3** from the above 2-dimensional arrays?
+How to get number **3** from the above 2-dimensional arrays? Try these three different ways:
 
 
 ```python
 arr4[0,1]
-```
-
-
-
-
+---
     3
-
-
-
+```
 
 ```python
 arr4[0][1]
-```
-
-
-
-
+---
     3
-
-
-
+```
 
 ```python
 arr4[0,1:2]
@@ -216,36 +201,15 @@ arr4[0,1:2]
 
 
 
-Can you figure out why this line of code only return one number instand of 3 and 4? In particular, this is different for the methods in pandas `iloc` dataframe methods. Be careful with the indexing hassals for different data structure, it may result potential errors and hard to identify.
-
-Let's see the example first and we will cover more details in next "intro to pandas" notebook.
-
-
-```python
-import pandas as pd
-
-arr4_datafram=pd.DataFrame(arr4)
-arr4_datafram.iloc[0,1:2]
-
-```
-
-
-
-
-    1    3
-    Name: 0, dtype: int64
-
-
-
-In addition, we can continue using **forward** counter, a **backward** counter, and **:** operator like we did with list or string data structures when selecting data.
+Can you figure out why this line of code only return one number instead of 3 and 4?  Be careful with the indexing hassles for different data structure, it may result potential errors and hard to identify. In addition, we can continue using **forward** counter, a **backward** counter, and **:** operator like we did with list or string data structures when selecting data.
 
 ---
-## Useful Math Methods in Numpy
+## Numerical Methods
 
 
 ### Elementwise Methods
 
-Remeber in python fundamental notebook 1, when we want to compute the log of a scalar, it returns an error, saying not defined. Yes, it is. Since in python, the majority of math operations like log, exp and so on are defined in `numpy` package.
+Remember in python fundamental notebook 1, when we want to compute the log of a scalar, it returns an error, saying not defined. Yes, it is. Since in python, the majority of math operations like log, exp and so on are defined in `numpy` package.
 
 Let's see the following examples...
 
@@ -296,7 +260,7 @@ np.sum(arr4)
 
 
 
-Intereting, it only returns one number which is the sum of all the elements of the array.
+Interesting, it only returns one number which is the sum of all the elements of the array.
 
 But can we perform row or column sum?
 
@@ -341,7 +305,7 @@ And we'll see more examples about this in next "intro to pandas" notebook.
 
 ### Random number generator
 
-We can use randn random number generator to generate an `numpy` with samples from a  “standard normal” distribution in specified shape.
+We can use a random number generator to generate an `numpy` with samples from a  “standard normal” distribution in specified shape.
 
 For example, we generate a 2 by 4 random number array...
 
