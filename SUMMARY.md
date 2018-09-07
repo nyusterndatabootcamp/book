@@ -9,9 +9,12 @@
 * [Python fundamentals 2](py-fun2.md)
 * [Coding best practices 2](best_practice_coding_tips_2.md)
 * [Python packages](packages.md)
+* [Introduction to numpy](intro_to_numpy.md)
 * [Pandas 1: Introduction to Pandas](pandas-intro.md)
 * [Pandas 2: Data Input](pandas-input.md)
 * [Python graphics: Matplotlib fundamentals](graphs1.md)
+* [Graphing best practices]()
+
 
 <!--
 * [Pandas 2:  Cleaning data](pandas-clean.md)
