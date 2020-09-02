@@ -13,7 +13,6 @@
 * [Pandas 1: Introduction to Pandas](pandas-intro.md)
 * [Pandas 2: Data Input](pandas-input.md)
 * [Python graphics: Matplotlib fundamentals](graphs1.md)
-* [Graphing best practices]()
 
 
 <!--
