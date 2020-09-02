@@ -8,7 +8,7 @@
 
 #### About this Book
 
-This document was created for the [NYU Stern](http://www.stern.nyu.edu/) [Data Bootcamp course](https://nyusterndatabootcamp.github.io/NYU-Data-Bootcamp/) by a team that includes David Backus, Sarah Beckett-Hile, Chase Coleman, Spencer Lyon, and Michael Waugh.  The idea is to give students experience with economic and financial data and introduce programming newbies to the benefits of moving beyond Excel.  We use the Python programming language, specifically Python's data management (pandas) and graphics tools (matplotlib). If that doesn't whet your appetite, we have a [more elaborate sales pitch](https://nyusterndatabootcamp.github.io/NYU-Data-Bootcamp/faq/).
+This document was created for the [NYU Stern](http://www.stern.nyu.edu/) [Data Bootcamp course](https://nyusterndatabootcamp.github.io/NYU-Data-Bootcamp/) by a team that includes David Backus, Sarah Beckett-Hile, Chase Coleman, Spencer Lyon, and Michael Waugh.  The idea is to give students experience with economic and financial data and introduce programming newbies to the benefits of moving beyond Excel.  We use the Python programming language, specifically Python's data management (pandas) and graphics tools (matplotlib).
 
 The book is primarily meant to be accessed via the internet. It comes with links, which we think is a huge advantage, and can be updated quickly.  Everything available is here:
 
@@ -20,7 +20,7 @@ This is version was created on August 2018.
 
 #### Acknowledgements
 
-This project was Glenn Okun's idea.  He really should have done it himself, but we thank him for the idea and his ongoing support. Paul Backus, Hersh Iyer, Tinghao Li, Matt McKay, Kim Ruhl, Itamar Snir, Benjamin Zweig, contributed technical support and applications.  Ian Stewart provided his usual expert advice on teaching methods.  You may also notice a family resemblance to Tom Sargent and John Stachurski's [Quantitative Economics](http://quant-econ.net/), a Python- and Julia-based course in dynamic macroeconomic theory.  We thank them for their advice and encouragement.
+This project was Glenn Okun's idea.  He really should have done it himself, but we thank him for the idea and his ongoing support. Paul Backus, Hersh Iyer, Tinghao Li, Matt McKay, Kim Ruhl, Itamar Snir, Benjamin Zweig, contributed technical support and applications.  Ian Stewart provided his usual expert advice on teaching methods.  You may also notice a family resemblance to Tom Sargent and John Stachurski's [Quantitative Economics], a Python- and Julia-based course in dynamic macroeconomic theory.  We thank them for their advice and encouragement.
 
 #### License
 
